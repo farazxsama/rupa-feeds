@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --nav-h: 64px;
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: auto; /* GSAP owns scroll-linked motion */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #08201c;
+  color: #0e1a17;
+  font-family: Manrope, system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+  }
+  .btn-primary {
+    @apply btn bg-grain-500 text-ink hover:bg-grain-300 focus-visible:ring-grain-300 focus-visible:ring-offset-pond-950;
+  }
+  .btn-ghost {
+    @apply btn border border-white/40 text-white hover:bg-white/10 focus-visible:ring-white focus-visible:ring-offset-pond-950;
+  }
+  .btn-dark {
+    @apply btn bg-pond-900 text-white hover:bg-pond-700 focus-visible:ring-pond-500 focus-visible:ring-offset-mist;
+  }
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.28em];
+  }
+  .glass-panel {
+    @apply rounded-2xl border border-white/10 bg-pond-950/55 text-white shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-md;
+  }
+}
+
+.text-shadow-soft {
+  text-shadow: 0 1px 24px rgba(4, 20, 17, 0.45);
+}
+
+/* Fallback diagram zone emphasis */
+.pond-diagram .zone { transition: opacity 600ms ease; }
+.pond-diagram[data-active="floating"] .zone:not(.z-floating),
+.pond-diagram[data-active="sinking"] .zone:not(.z-sinking),
+.pond-diagram[data-active="polyculture"] .zone:not(.z-poly) { opacity: 0.28; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes scroll-hint {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+.animate-scroll-hint { animation: scroll-hint 2.2s ease-in-out infinite; }
