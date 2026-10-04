@@ -7,7 +7,11 @@ export function Footer() {
     <footer className="bg-pond-950 text-white/75">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr_1fr] lg:px-8">
         <div>
-          <BrandLogo />
+          <div className="flex items-center gap-3">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={site.logoImage} alt="" className="h-10 w-auto" />
+            <BrandLogo />
+          </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed">{site.hero.body}</p>
         </div>
         <nav aria-label="Footer — company">
@@ -20,6 +24,11 @@ export function Footer() {
                 </a>
               </li>
             ))}
+            <li>
+              <a href={site.navCta.href} className="hover:text-white">
+                {site.navCta.label}
+              </a>
+            </li>
           </ul>
         </nav>
         <nav aria-label="Footer — products">

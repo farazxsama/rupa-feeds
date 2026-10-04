@@ -10,13 +10,28 @@ export const site = {
    */
   logoSrc: null as string | null,
 
+  /**
+   * Logo IMAGE shown beside "RUPA FEEDS" in the navbar and in the footer.
+   * Replace this one path (e.g. "/brand/logo.png") — it is used in both places.
+   */
+  logoImage: "/img/rupa-logo.png",
+
   nav: [
     { label: "Home", href: "/" },
-    { label: "About Us", href: "/about" },
-    { label: "Products", href: "/products" },
-    { label: "Why Rupa", href: "#why-rupa" },
-    { label: "Contact", href: "/contact" },
-  ],
+    { label: "About", href: "/about" },
+    {
+      label: "Products",
+      href: "/products",
+      /** Hover dropdown (desktop) / expandable submenu (mobile). Paths match config/products.ts. */
+      children: [
+        { label: "Floating Feed", href: "/products/floating-feed" },
+        { label: "Sinking Feed", href: "/products/sinking-feed" },
+        { label: "Polyculture Feed", href: "/products/polyculture-feed" },
+      ],
+    },
+    { label: "Gallery", href: "/gallery" },
+    { label: "Our Branches", href: "/branches" },
+  ] as { label: string; href: string; children?: { label: string; href: string }[] }[],
   navCta: { label: "Contact Us", href: "/contact" },
 
   hero: {
