@@ -36,7 +36,7 @@ export function ProductOverview() {
       ref={section}
       id="products"
       aria-labelledby="overview-title"
-      className="relative bg-gradient-to-b from-pond-950 via-[#173a31] to-mist pb-24 pt-24 sm:pt-32"
+      className="relative bg-gradient-to-b from-pond-950 via-[#0c4a6e] to-mist pb-24 pt-24 sm:pt-32"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">

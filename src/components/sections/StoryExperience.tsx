@@ -27,7 +27,7 @@ function Poster({ hidden }: { hidden: boolean }) {
       className={`absolute inset-0 transition-opacity duration-1000 ${hidden ? "opacity-0" : "opacity-100"}`}
       style={{
         background:
-          "linear-gradient(180deg, #8fb3cf 0%, #c9d8dc 38%, #a9b9a6 44%, #3e5a43 47%, #1d3a2c 70%, #0f2a22 100%)",
+          "linear-gradient(180deg, #8fb3cf 0%, #c9d8dc 38%, #a9bcc6 44%, #2f6f8a 47%, #0c4a6e 70%, #082f49 100%)",
       }}
     />
   );
@@ -78,7 +78,7 @@ export function StoryExperience() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(120% 90% at 50% 45%, transparent 55%, rgba(4,18,15,0.45) 100%), linear-gradient(0deg, rgba(4,18,15,0.45) 0%, transparent 35%)",
+              "radial-gradient(120% 90% at 50% 45%, transparent 55%, rgba(4,16,28,0.45) 100%), linear-gradient(0deg, rgba(4,16,28,0.45) 0%, transparent 35%)",
           }}
         />
         {mode === "3d" && !ready && (

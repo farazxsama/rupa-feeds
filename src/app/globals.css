@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  background: #08201c;
+  background: #082f49;
   color: #0e1a17;
   font-family: Manrope, system-ui, -apple-system, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -42,7 +42,7 @@ body {
 }
 
 .text-shadow-soft {
-  text-shadow: 0 1px 24px rgba(4, 20, 17, 0.45);
+  text-shadow: 0 1px 24px rgba(4, 16, 28, 0.45);
 }
 
 /* Fallback diagram zone emphasis */

@@ -8,8 +8,8 @@ export const SUN_DIR = new THREE.Vector3(0.35, 0.42, -0.84).normalize();
 
 const SKY = new THREE.Color("#bcd3e3");
 const GROUND = new THREE.Color("#46502f");
-const SKY_UNDER = new THREE.Color("#6fb0a0");
-const GROUND_UNDER = new THREE.Color("#1d2f24");
+const SKY_UNDER = new THREE.Color("#8fc4d8");
+const GROUND_UNDER = new THREE.Color("#12303f");
 
 /**
  * Two lights total (sun + hemisphere). No real-time shadow maps: underwater

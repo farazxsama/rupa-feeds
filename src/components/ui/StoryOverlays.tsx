@@ -38,7 +38,7 @@ export function DiveOverlay() {
       ref={el}
       aria-hidden="true"
       className="pointer-events-none absolute inset-0 opacity-0"
-      style={{ background: "linear-gradient(180deg, rgba(210,232,226,0.35) 0%, rgba(60,116,102,0.6) 55%, rgba(20,60,52,0.7) 100%)" }}
+      style={{ background: "linear-gradient(180deg, rgba(210,230,240,0.35) 0%, rgba(34,128,160,0.6) 55%, rgba(12,60,90,0.7) 100%)" }}
     />
   );
 }

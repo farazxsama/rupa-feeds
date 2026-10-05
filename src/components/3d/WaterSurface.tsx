@@ -30,12 +30,12 @@ export function WaterSurface({ segments }: { segments: number }) {
           {
             uSunDir: { value: SUN_DIR.clone() },
             uSunColor: { value: new THREE.Color("#fff1d6") },
-            uDeep: { value: new THREE.Color("#18301f") },
-            uShallow: { value: new THREE.Color("#3d5a3c") },
+            uDeep: { value: new THREE.Color("#0b2f4a") },
+            uShallow: { value: new THREE.Color("#1f6585") },
             uSkyZenith: { value: new THREE.Color("#4f86bd") },
             uSkyHorizon: { value: new THREE.Color("#c8d8df") },
             uShore: { value: new THREE.Color("#26331f") },
-            uUnderTIR: { value: new THREE.Color("#2f6658") },
+            uUnderTIR: { value: new THREE.Color("#1f6f8f") },
           },
         ]),
         vertexShader: /* glsl */ `

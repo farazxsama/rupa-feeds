@@ -17,9 +17,9 @@ import { SUN_DIR } from "./Lighting";
  */
 
 const ABOVE_FOG = new THREE.Color("#c6d5da");
-const SHALLOW = new THREE.Color("#3c7466");
-const DEEP = new THREE.Color("#0f2e2a");
-const BRIGHT_TINT = new THREE.Color("#1d3a2f");
+const SHALLOW = new THREE.Color("#2b7fa0");
+const DEEP = new THREE.Color("#0a3350");
+const BRIGHT_TINT = new THREE.Color("#12405c");
 
 function Atmosphere() {
   const scene = useThree((s) => s.scene);
@@ -95,7 +95,7 @@ function LightRays({ count }: { count: number }) {
             float d = length(cameraPosition - vW);
             float near = smoothstep(0.6, 2.5, d) * (1.0 - smoothstep(10.0, 22.0, d));
             float a = edge * along * flick * near * uUnder * 0.075;
-            gl_FragColor = vec4(vec3(0.86, 0.97, 0.88) * a, 1.0);
+            gl_FragColor = vec4(vec3(0.84, 0.95, 1.0) * a, 1.0);
           }`,
       }),
     []
@@ -195,7 +195,7 @@ function Particles({ count }: { count: number }) {
             float d = length(gl_PointCoord - 0.5);
             float a = smoothstep(0.5, 0.1, d) * vA * 0.55;
             if (a < 0.003) discard;
-            gl_FragColor = vec4(0.78, 0.86, 0.74, a);
+            gl_FragColor = vec4(0.75, 0.86, 0.9, a);
           }`,
       }),
     []

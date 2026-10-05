@@ -63,7 +63,7 @@ export function Shrimp({ count, seed = 11 }: { count: number; seed?: number }) {
   const material = useMemo(
     () =>
       patchPondMaterial(
-        new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.42, metalness: 0.05, side: THREE.DoubleSide }),
+        new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.45, metalness: 0, envMapIntensity: 0.6, side: THREE.DoubleSide }),
         { vertexHeader: SHRIMP_GLSL.header, vertexDeform: SHRIMP_GLSL.deform }
       ),
     []

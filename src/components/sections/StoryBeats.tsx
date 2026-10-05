@@ -29,7 +29,7 @@ export function HeroSection() {
   return (
     <Beat id="hero" label="Introduction" className="items-end pb-16 sm:pb-20 md:items-center md:pb-6">
       <div data-panel className="pointer-events-auto mx-auto w-full max-w-7xl">
-        <div className="max-w-2xl text-white">
+        {/* <div className="max-w-2xl text-white">
           <p className="eyebrow text-white/80 text-shadow-soft">{h.eyebrow}</p>
           <h1 className="mt-4 font-display text-[2.6rem] font-medium leading-[1.04] tracking-[-0.01em] text-shadow-soft sm:text-6xl lg:text-7xl">
             {h.title}
@@ -43,7 +43,7 @@ export function HeroSection() {
               {h.secondaryCta.label}
             </a>
           </div>
-        </div>
+        </div> */}
         <p className="mt-14 hidden items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-white/70 md:flex">
           <span className="animate-scroll-hint inline-block h-8 w-px bg-white/70" aria-hidden="true" />
           {h.scrollHint}

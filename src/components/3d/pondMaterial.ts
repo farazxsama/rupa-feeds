@@ -10,7 +10,7 @@ export const pondUniforms = {
   /** 0 = camera above water, 1 = camera underwater */
   uPondUnder: { value: 0 },
   /** Colour objects take on when seen from ABOVE through the water column. */
-  uPondTint: { value: new THREE.Color("#1d3a2f") },
+  uPondTint: { value: new THREE.Color("#12405c") },
   uCausticStrength: { value: 0.55 },
 };
 

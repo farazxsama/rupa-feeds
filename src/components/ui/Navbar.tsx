@@ -28,12 +28,12 @@ export function Navbar() {
   const solid = scrolled || open;
 
   const contactCls = solid
-    ? "bg-white text-[#0303AB] hover:bg-white/90 focus-visible:ring-white focus-visible:ring-offset-[#0303AB]"
-    : "bg-white text-[#0303AB] hover:bg-white/90 focus-visible:ring-white focus-visible:ring-offset-[#0303AB]";
+    ? "bg-white text-blue-600 hover:bg-white/90 focus-visible:ring-white focus-visible:ring-offset-blue-600"
+    : "bg-white text-blue-600 hover:bg-white/90 focus-visible:ring-white focus-visible:ring-offset-blue-600";
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ${solid ? "border-white/10 bg-[#0303AB]" : "border-white/10 bg-[#0303AB]"
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ${solid ? "border-white/10 bg-blue-600" : "border-white/10 bg-blue-600"
         }`}
     >
       {/* soft top scrim keeps links readable over the hero while the bar is transparent */}

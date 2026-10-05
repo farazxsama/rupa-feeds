@@ -33,9 +33,9 @@ export function PondDiagram({
           <stop offset="1" stopColor="#eef0e8" />
         </linearGradient>
         <linearGradient id="pd-water" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#3f7568" />
-          <stop offset="0.55" stopColor="#1c4a40" />
-          <stop offset="1" stopColor="#0d2723" />
+          <stop offset="0" stopColor="#2a86a8" />
+          <stop offset="0.55" stopColor="#0c4a6e" />
+          <stop offset="1" stopColor="#082f49" />
         </linearGradient>
         <linearGradient id="pd-ray" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#ffffff" stopOpacity="0.16" />
