@@ -34,6 +34,8 @@ export const feed = {
   /** centre of the sinking pellet cloud (fish follow this downward) */
   sinkCenter: new THREE.Vector3(7, 2, -1),
   sinkActive: false,
+  /** world position of the farmer's cupped palm (floating pellets are carried / released from here) */
+  hand: new THREE.Vector3(1.4, 1, -1.7),
   /** surface ripple events (time-based so they keep animating when scroll stops) */
   ripples: [] as { x: number; z: number; t0: number; s: number }[],
   clock: 0,

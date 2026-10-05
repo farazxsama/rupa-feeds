@@ -16,6 +16,7 @@ import { AquaticPlants } from "./AquaticPlants";
 import { FeedingNet } from "./FeedingNet";
 import { FishSchool } from "./FishSchool";
 import { Shrimp } from "./Shrimp";
+import { FeedingBoat } from "./FeedingBoat";
 import { FloatingPellets } from "./FloatingPellets";
 import { SinkingPellets } from "./SinkingPellets";
 import { PolyculturePellets } from "./PolyculturePellets";
@@ -194,6 +195,7 @@ export default function PondScene({ quality, active, onReady, onContextLost }: P
         <AquaticPlants kind="submerged" count={quality.plants} />
         <FeedingNet />
         <Animals q={quality} />
+        <FeedingBoat />
         <FloatingPellets count={quality.pellets.floating} />
         <SinkingPellets count={quality.pellets.sinking} />
         <PolyculturePellets count={quality.pellets.poly} />

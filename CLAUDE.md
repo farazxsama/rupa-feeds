@@ -59,6 +59,7 @@ Camera keyframes are authored per beat (`at` = 0..1 within the beat), so section
 
 - **Wave height** is implemented twice in `src/lib/pondMath.ts`: `waveHeight()` in TS and `WAVE_GLSL` generated from the same wave table. Floating pellets ride the CPU version while the surface renders the GPU one; change the table `W`, not one side.
 - **Sinking pellet depth** (`DEPTH_CURVE` in `SinkingPellets.tsx`) is matched to the `sinking` camera look targets in `CAMERA_KEYS`. Retuning either without the other separates the camera from the feed cloud.
+- **Floating-feed boat scene** (`FeedingBoat.tsx`, `Farmer.tsx`, `FloatingPellets.tsx`): layout is `BOAT` and timing is `FLOAT_FEED` in `config/story.ts`. The farmer's arm keyframes and the pellets both read `FLOAT_FEED` (`grabAt` / `releaseAt`), and pellets are carried in / released from `feed.hand`, which `Farmer` writes each frame — so `FeedingBoat` must stay mounted before `FloatingPellets` in `PondScene`. The sack mouth the hand reaches for is derived from `BOAT.farmer` / `BOAT.bag`; moving either changes arm reach (two-bone IK clamps at full extension). The floating `CAMERA_KEYS` are aimed at the boat.
 - **`WORLD` anchors** are used by terrain (`terrainHeight` flattens a pad under the feeding tray), the net, pellets, fish school centres and camera keys.
 - **Layout is deterministic**: placement uses seeded `mulberry32`, not `Math.random`.
 
