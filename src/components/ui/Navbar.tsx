@@ -33,7 +33,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ${solid ? "border-white/10 bg-blue-600" : "border-white/10 bg-blue-600"
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ${solid ? "border-white/10 bg-blue-600" : "border-transparent bg-blue-600/0"
         }`}
     >
       {/* soft top scrim keeps links readable over the hero while the bar is transparent */}

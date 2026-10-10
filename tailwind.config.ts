@@ -24,7 +24,7 @@ const config: Config = {
         sand: "#E8E1D2",
       },
       fontFamily: {
-        display: ["Fraunces", "Georgia", "serif"],
+        display: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
         sans: ["Manrope", "system-ui", "-apple-system", "Segoe UI", "sans-serif"],
       },
       letterSpacing: { brand: "0.32em" },

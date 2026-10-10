@@ -39,10 +39,10 @@ export function placeholderPackagingCanvas(product: Product): HTMLCanvasElement 
   g.fillText("brand mark placeholder", W / 2, 104);
 
   g.fillStyle = "#1a2420";
-  g.font = "600 52px Fraunces, Georgia, serif";
+  g.font = "600 52px 'Plus Jakarta Sans', system-ui, sans-serif";
   const [first, ...rest] = product.name.split(" ");
   g.fillText(first, W / 2, 290);
-  g.font = "400 40px Fraunces, Georgia, serif";
+  g.font = "400 40px 'Plus Jakarta Sans', system-ui, sans-serif";
   g.fillText(rest.join(" "), W / 2, 342);
 
   g.strokeStyle = "#1a2420";
