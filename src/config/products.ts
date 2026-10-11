@@ -47,7 +47,7 @@ export const products: Record<ProductId, Product> = {
       "Designed for surface-feeding fish",
       "Consistent pellet performance",
     ],
-    href: "/products/floating-feed",
+    href: "/products/floating-feeds",
     packagingTexture: null, // e.g. "/packaging/floating-feed-front.jpg"
     accent: "#C8913A",
   },
@@ -63,7 +63,7 @@ export const products: Record<ProductId, Product> = {
       "Controlled sinking behaviour",
       "Suitable for bottom / deeper feeding fish",
     ],
-    href: "/products/sinking-feed",
+    href: "/products/sinking-feeds",
     packagingTexture: null, // e.g. "/packaging/sinking-feed-front.jpg"
     accent: "#3E7F6E",
   },
@@ -80,7 +80,7 @@ export const products: Record<ProductId, Product> = {
       "Reaches the bottom where shrimp feed",
     ],
     indicators: ["Fish", "Shrimp"],
-    href: "/products/polyculture-feed",
+    href: "/products/poly-culture-feeds",
     packagingTexture: null, // e.g. "/packaging/polyculture-feed-front.jpg"
     accent: "#8E6220",
   },

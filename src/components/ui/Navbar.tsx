@@ -81,7 +81,7 @@ export function Navbar() {
               {l.children && (
                 // pt-3 is an invisible bridge so the menu stays open while the cursor crosses the gap
                 <div className="invisible absolute left-1/2 top-full w-56 -translate-x-1/2 pt-3 opacity-0 transition-[opacity,visibility] duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-                  <ul className="overflow-hidden rounded-xl border border-white/15 bg-[#0303AB] p-1.5 shadow-[0_20px_40px_-16px_rgba(0,0,40,0.55)]">
+                  <ul className="overflow-hidden rounded-xl border border-white/15 bg-blue-600 p-1.5 shadow-[0_20px_40px_-16px_rgba(0,0,40,0.55)]">
                     {l.children.map((c) => (
                       <li key={c.label}>
                         <a

@@ -24,9 +24,9 @@ export const site = {
       href: "/products",
       /** Hover dropdown (desktop) / expandable submenu (mobile). Paths match config/products.ts. */
       children: [
-        { label: "Floating Feed", href: "/products/floating-feed" },
-        { label: "Sinking Feed", href: "/products/sinking-feed" },
-        { label: "Polyculture Feed", href: "/products/polyculture-feed" },
+        { label: "Floating Feed", href: "/products/floating-feeds" },
+        { label: "Sinking Feed", href: "/products/sinking-feeds" },
+        { label: "Polyculture Feed", href: "/products/poly-culture-feeds" },
       ],
     },
     { label: "Gallery", href: "/gallery" },
