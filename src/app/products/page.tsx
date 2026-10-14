@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 const wrap = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8";
-const blueTile = { background: "linear-gradient(140deg, #0891b2 0%, #0c4a6e 100%)" };
+const blueTile = { background: "linear-gradient(140deg, #2f2ee0 0%, #030378 100%)" };
 
 export default function ProductsPage() {
   return (
@@ -33,7 +33,7 @@ export default function ProductsPage() {
         <section
           aria-labelledby="products-title"
           className="relative overflow-hidden pt-16 text-white"
-          style={{ background: "radial-gradient(120% 140% at 15% 0%, #0e7490 0%, #0c4a6e 50%, #082f49 100%)" }}
+          style={{ background: "radial-gradient(120% 140% at 15% 0%, #0504aa 0%, #030378 50%, #020250 100%)" }}
         >
           <div aria-hidden="true" className="pointer-events-none absolute -right-32 top-10 h-96 w-96 rounded-full bg-pond-300/15 blur-3xl" />
           <div className={`${wrap} relative grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-[1.05fr_1fr] lg:gap-16`}>
@@ -49,7 +49,7 @@ export default function ProductsPage() {
                   Products
                 </span>
               </nav>
-              <p className="eyebrow mt-8 text-grain-300">{range.eyebrow}</p>
+              <p className="eyebrow mt-8 text-pond-300">{range.eyebrow}</p>
               <h1 id="products-title" className="mt-4 font-display text-[2.75rem] font-semibold leading-[1.04] sm:text-6xl lg:text-7xl">
                 {range.title}
               </h1>
@@ -92,14 +92,14 @@ export default function ProductsPage() {
               <h2 id="range-title" className="mt-4 font-display text-3xl font-medium leading-tight text-ink sm:text-4xl lg:text-[2.75rem]">
                 Three feeds, one standard of quality
               </h2>
-              <span aria-hidden="true" className="mx-auto mt-5 block h-1 w-16 rounded-full" style={{ background: "linear-gradient(90deg, #0891b2, #c8913a)" }} />
+              <span aria-hidden="true" className="mx-auto mt-5 block h-1 w-16 rounded-full" style={{ background: "linear-gradient(90deg, #2f2ee0, #5b5af0)" }} />
             </div>
 
             <div className="mt-14 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
               {productDetails.map((p) => (
                 <article
                   key={p.slug}
-                  className="group relative flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-[0_30px_60px_-45px_rgba(14,26,23,0.45)] transition duration-300 hover:-translate-y-1.5 hover:border-pond-300 hover:shadow-[0_40px_70px_-36px_rgba(8,47,73,0.5)]"
+                  className="group relative flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-[0_30px_60px_-45px_rgba(14,26,23,0.45)] transition duration-300 hover:-translate-y-1.5 hover:border-pond-300 hover:shadow-[0_40px_70px_-36px_rgba(2,2,80,0.5)]"
                 >
                   <div className="relative overflow-hidden bg-white p-6">
                     <div aria-hidden="true" className="absolute inset-x-10 bottom-4 h-10 rounded-full bg-pond-900/15 blur-2xl" />
@@ -149,7 +149,7 @@ export default function ProductsPage() {
             <ul className="grid content-start gap-3 sm:grid-cols-2">
               {about.why.points.map((pt) => (
                 <li key={pt} className="flex items-start gap-4 rounded-2xl border border-ink/10 bg-mist/60 p-5 transition duration-200 hover:-translate-y-0.5 hover:border-pond-300 hover:bg-pond-100/60">
-                  <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl text-white shadow-[0_10px_20px_-10px_rgba(8,47,73,0.7)]" style={blueTile} aria-hidden="true">
+                  <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl text-white shadow-[0_10px_20px_-10px_rgba(2,2,80,0.7)]" style={blueTile} aria-hidden="true">
                     <svg width="18" height="18" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M2.5 6.5l2.3 2.3L9.500 3.500" />
                     </svg>
@@ -186,7 +186,7 @@ export default function ProductsPage() {
         <section aria-labelledby="products-cta-title" className="bg-white px-4 pb-24 sm:px-6 lg:px-8">
           <div
             className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] px-6 py-16 text-center sm:px-12 sm:py-20"
-            style={{ background: "radial-gradient(120% 140% at 50% 0%, #0e7490 0%, #0c4a6e 55%, #082f49 100%)" }}
+            style={{ background: "radial-gradient(120% 140% at 50% 0%, #0504aa 0%, #030378 55%, #020250 100%)" }}
           >
             <h2 id="products-cta-title" className="mx-auto max-w-3xl font-display text-3xl font-medium leading-tight text-white sm:text-5xl">
               Not sure which feed fits your pond?

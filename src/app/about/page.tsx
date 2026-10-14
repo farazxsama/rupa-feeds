@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/sections/Footer";
+import { Testimonials } from "@/components/sections/Testimonials";
 import { about } from "@/config/about";
 import { site } from "@/config/site";
 
@@ -25,7 +26,7 @@ function Picture({ src, label, className = "" }: { src: string | null; label: st
       role="img"
       aria-label={`${label} (placeholder)`}
       className={`flex h-full w-full flex-col items-center justify-center gap-3 text-white/80 ${className}`}
-      style={{ background: "linear-gradient(140deg, #0e7490 0%, #0c4a6e 55%, #082f49 100%)" }}
+      style={{ background: "linear-gradient(140deg, #0504aa 0%, #030378 55%, #020250 100%)" }}
     >
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" aria-hidden="true">
         <rect x="3" y="4.5" width="18" height="15" rx="2.5" />
@@ -101,22 +102,10 @@ function SocialIcon({ name }: { name: string }) {
   );
 }
 
-function Stars() {
-  return (
-    <div className="flex gap-0.5 text-grain-500" aria-label="5 out of 5 stars" role="img">
-      {[0, 1, 2, 3, 4].map((i) => (
-        <svg key={i} width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-          <path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7L10 14.8 4.9 17.5l1-5.7-4.1-4 5.7-.8L10 1.8z" />
-        </svg>
-      ))}
-    </div>
-  );
-}
-
 const wrap = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8";
 
 export default function AboutPage() {
-  const { hero, intro, why, purpose, journey, values, csr, certifications, testimonials } = about;
+  const { hero, intro, why, purpose, journey, values, csr, certifications } = about;
 
   return (
     <>
@@ -126,7 +115,7 @@ export default function AboutPage() {
         <section
           aria-labelledby="about-title"
           className="relative overflow-hidden pt-16 text-white"
-          style={{ background: "radial-gradient(120% 140% at 15% 0%, #0e7490 0%, #0c4a6e 50%, #082f49 100%)" }}
+          style={{ background: "radial-gradient(120% 140% at 15% 0%, #0504aa 0%, #030378 50%, #020250 100%)" }}
         >
           <div className={`${wrap} grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.05fr_1fr] lg:py-24`}>
             <div>
@@ -141,7 +130,7 @@ export default function AboutPage() {
                   About
                 </span>
               </nav>
-              <p className="eyebrow mt-8 text-grain-300">{hero.eyebrow}</p>
+              <p className="eyebrow mt-8 text-pond-300">{hero.eyebrow}</p>
               <h1 id="about-title" className="mt-4 font-display text-[2.6rem] font-medium leading-[1.05] sm:text-6xl">
                 {hero.title}
               </h1>
@@ -194,8 +183,8 @@ export default function AboutPage() {
                       className="group flex items-start gap-4 rounded-2xl border border-ink/10 bg-mist/60 p-5 transition duration-200 hover:-translate-y-0.5 hover:border-pond-300 hover:bg-pond-100/60"
                     >
                       <span
-                        className="flex h-12 w-12 flex-none items-center justify-center rounded-xl text-white shadow-[0_10px_20px_-10px_rgba(8,47,73,0.7)]"
-                        style={{ background: "linear-gradient(140deg, #0891b2 0%, #0c4a6e 100%)" }}
+                        className="flex h-12 w-12 flex-none items-center justify-center rounded-xl text-white shadow-[0_10px_20px_-10px_rgba(2,2,80,0.7)]"
+                        style={{ background: "linear-gradient(140deg, #2f2ee0 0%, #030378 100%)" }}
                         aria-hidden="true"
                       >
                         <WhyIcon index={i} />
@@ -207,11 +196,11 @@ export default function AboutPage() {
               </div>
               <div
                 className="grid gap-6 px-7 py-8 text-white sm:px-10 sm:py-10 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-12"
-                style={{ background: "radial-gradient(120% 160% at 0% 0%, #0e7490 0%, #0c4a6e 55%, #082f49 100%)" }}
+                style={{ background: "radial-gradient(120% 160% at 0% 0%, #0504aa 0%, #030378 55%, #020250 100%)" }}
               >
                 <p className="leading-relaxed text-white/80">{why.closing}</p>
                 <p className="flex gap-4 font-display text-xl font-medium leading-snug sm:text-2xl">
-                  <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-white/10 text-grain-300" aria-hidden="true">
+                  <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-white/10 text-pond-300" aria-hidden="true">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
                       <circle cx="12" cy="12" r="8.5" />
                       <circle cx="12" cy="12" r="4.5" />
@@ -229,7 +218,7 @@ export default function AboutPage() {
         <section
           aria-label="Mission and vision"
           className="relative overflow-hidden bg-pond-950"
-          style={{ background: "radial-gradient(90% 120% at 50% 0%, #0c4a6e 0%, #082f49 60%)" }}
+          style={{ background: "radial-gradient(90% 120% at 50% 0%, #030378 0%, #020250 60%)" }}
         >
           {purpose.image && (
             // eslint-disable-next-line @next/next/no-img-element
@@ -237,7 +226,7 @@ export default function AboutPage() {
           )}
           {/* soft light pools behind the cards */}
           <div aria-hidden="true" className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-pond-500/20 blur-3xl" />
-          <div aria-hidden="true" className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-grain-500/15 blur-3xl" />
+          <div aria-hidden="true" className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-pond-300/20 blur-3xl" />
           <div className={`${wrap} relative grid gap-6 py-20 sm:py-24 md:grid-cols-2`}>
             {[purpose.mission, purpose.vision].map((m, i) => (
               <article
@@ -247,7 +236,7 @@ export default function AboutPage() {
                 <span
                   aria-hidden="true"
                   className="absolute inset-x-0 top-0 h-1"
-                  style={{ background: i === 0 ? "linear-gradient(90deg, #e3be7a, #c8913a)" : "linear-gradient(90deg, #7dd3fc, #0891b2)" }}
+                  style={{ background: i === 0 ? "linear-gradient(90deg, #c9c8fb, #5b5af0)" : "linear-gradient(90deg, #a8a7f7, #2f2ee0)" }}
                 />
                 <span aria-hidden="true" className="pointer-events-none absolute -right-2 -top-6 select-none font-display text-[9rem] font-semibold leading-none text-white/[0.05]">
                   {String(i + 1).padStart(2, "0")}
@@ -256,8 +245,8 @@ export default function AboutPage() {
                   aria-hidden="true"
                   className="relative flex h-16 w-16 items-center justify-center rounded-2xl shadow-[0_16px_30px_-14px_rgba(0,0,0,0.7)]"
                   style={{
-                    background: i === 0 ? "linear-gradient(140deg, #e3be7a 0%, #c8913a 100%)" : "linear-gradient(140deg, #7dd3fc 0%, #0891b2 100%)",
-                    color: "#082f49",
+                    background: i === 0 ? "linear-gradient(140deg, #c9c8fb 0%, #5b5af0 100%)" : "linear-gradient(140deg, #a8a7f7 0%, #2f2ee0 100%)",
+                    color: "#020250",
                   }}
                 >
                   <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
@@ -277,7 +266,7 @@ export default function AboutPage() {
                     )}
                   </svg>
                 </span>
-                <p className="eyebrow relative mt-7 text-grain-300">{String(i + 1).padStart(2, "0")}</p>
+                <p className="eyebrow relative mt-7 text-pond-300">{String(i + 1).padStart(2, "0")}</p>
                 <h2 className="relative mt-3 font-display text-3xl font-medium sm:text-4xl">{m.title}</h2>
                 <p className="relative mt-4 text-base leading-relaxed text-white/85 sm:text-lg">{m.body}</p>
               </article>
@@ -316,25 +305,25 @@ export default function AboutPage() {
             <h2 id="values-title" className="text-center font-display text-4xl font-medium text-ink sm:text-5xl">
               {values.title}
             </h2>
-            <span aria-hidden="true" className="mx-auto mt-5 block h-1 w-16 rounded-full" style={{ background: "linear-gradient(90deg, #0891b2, #c8913a)" }} />
+            <span aria-hidden="true" className="mx-auto mt-5 block h-1 w-16 rounded-full" style={{ background: "linear-gradient(90deg, #2f2ee0, #5b5af0)" }} />
             <div className="mt-12 grid gap-6 md:grid-cols-3">
               {values.items.map((v, i) => {
                 const tone = [
-                  "linear-gradient(140deg, #e3be7a 0%, #c8913a 100%)",
-                  "linear-gradient(140deg, #0891b2 0%, #0c4a6e 100%)",
-                  "linear-gradient(140deg, #7dd3fc 0%, #0891b2 100%)",
+                  "linear-gradient(140deg, #c9c8fb 0%, #5b5af0 100%)",
+                  "linear-gradient(140deg, #2f2ee0 0%, #030378 100%)",
+                  "linear-gradient(140deg, #a8a7f7 0%, #2f2ee0 100%)",
                 ][i % 3];
                 return (
                   <article
                     key={v.title}
-                    className="group relative overflow-hidden rounded-3xl border border-ink/10 bg-white p-8 text-center shadow-[0_30px_60px_-45px_rgba(14,26,23,0.45)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_36px_60px_-36px_rgba(8,47,73,0.5)] sm:p-10"
+                    className="group relative overflow-hidden rounded-3xl border border-ink/10 bg-white p-8 text-center shadow-[0_30px_60px_-45px_rgba(14,26,23,0.45)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_36px_60px_-36px_rgba(2,2,80,0.5)] sm:p-10"
                   >
                     <span aria-hidden="true" className="pointer-events-none absolute right-4 -top-4 select-none font-display text-[7rem] font-semibold leading-none text-pond-900/[0.05]">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span
-                      className="relative mx-auto flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-2xl shadow-[0_16px_28px_-14px_rgba(8,47,73,0.6)] ring-8 ring-pond-100/60"
-                      style={{ background: tone, color: i === 1 ? "#ffffff" : "#082f49" }}
+                      className="relative mx-auto flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-2xl shadow-[0_16px_28px_-14px_rgba(2,2,80,0.6)] ring-8 ring-pond-100/60"
+                      style={{ background: tone, color: i === 1 ? "#ffffff" : "#020250" }}
                     >
                       <ValueIcon name={v.icon} />
                     </span>
@@ -369,7 +358,7 @@ export default function AboutPage() {
                     aria-label={l.label}
                     title={l.label}
                     style={{ background: socialFor(l.label).background }}
-                    className="flex h-14 w-14 items-center justify-center rounded-full text-white shadow-[0_10px_24px_-10px_rgba(8,47,73,0.55)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_16px_30px_-12px_rgba(8,47,73,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pond-500 focus-visible:ring-offset-2"
+                    className="flex h-14 w-14 items-center justify-center rounded-full text-white shadow-[0_10px_24px_-10px_rgba(2,2,80,0.55)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_16px_30px_-12px_rgba(2,2,80,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pond-500 focus-visible:ring-offset-2"
                   >
                     <SocialIcon name={l.label} />
                   </a>
@@ -388,82 +377,43 @@ export default function AboutPage() {
               </h2>
               <p className="mt-5 leading-relaxed text-ink/70">{certifications.body}</p>
             </div>
-            <ul className="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
-              {certifications.items.map((c) => (
-                <li key={c.name} className="flex flex-col items-center rounded-3xl border border-ink/10 bg-white p-6 text-center">
-                  <div className="h-24 w-24 overflow-hidden rounded-full sm:h-28 sm:w-28">
-                    {c.image ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={c.image} alt={`${c.name} certificate`} className="h-full w-full object-contain" />
-                    ) : (
-                      <div className="flex h-full w-full items-center justify-center border-2 border-dashed border-pond-300 bg-pond-100 text-[10px] font-semibold uppercase tracking-[0.16em] text-pond-700" style={{ borderRadius: "9999px" }}>
-                        Logo
+            {/* continuous right-to-left loop: the track holds two identical copies and
+                slides by exactly one copy (-50%), so the restart is seamless. Each copy
+                repeats the certificates twice so it is always wider than the screen. */}
+            <div className="group mt-12 overflow-hidden motion-reduce:overflow-x-auto">
+              <div className="flex w-max animate-[cert-marquee_48s_linear_infinite] group-hover:[animation-play-state:paused] motion-reduce:animate-none">
+                {[0, 1].map((copy) => (
+                  <ul key={copy} aria-hidden={copy === 1 ? true : undefined} className="flex">
+                    {[...certifications.items, ...certifications.items].map((c, i) => (
+                      <li
+                        key={`${c.name}-${i}`}
+                        aria-hidden={copy === 0 && i >= certifications.items.length ? true : undefined}
+                        className="w-[calc((100vw-2rem-1rem)/2+1rem)] flex-none pr-4 sm:w-[calc((min(100vw,80rem)-3rem-1.5rem)/2+1.5rem)] sm:pr-6 lg:w-[calc((min(100vw,80rem)-4rem-4.5rem)/4+1.5rem)]"
+                      >
+                      <div className="flex h-full flex-col items-center rounded-3xl border border-ink/10 bg-white p-6 text-center">
+                        <div className="h-24 w-24 overflow-hidden rounded-full sm:h-28 sm:w-28">
+                          {c.image ? (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img src={c.image} alt={`${c.name} certificate`} className="h-full w-full object-contain" />
+                          ) : (
+                            <div className="flex h-full w-full items-center justify-center border-2 border-dashed border-pond-300 bg-pond-100 text-[10px] font-semibold uppercase tracking-[0.16em] text-pond-700" style={{ borderRadius: "9999px" }}>
+                              Logo
+                            </div>
+                          )}
+                        </div>
+                        <h3 className="mt-5 font-semibold text-ink">{c.name}</h3>
+                        <p className="mt-1 text-sm text-ink/60">{c.detail}</p>
                       </div>
-                    )}
-                  </div>
-                  <h3 className="mt-5 font-semibold text-ink">{c.name}</h3>
-                  <p className="mt-1 text-sm text-ink/60">{c.detail}</p>
-                </li>
-              ))}
-            </ul>
+                      </li>
+                    ))}
+                  </ul>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section aria-labelledby="reviews-title" className="bg-gradient-to-b from-white to-pond-100/70 py-20 sm:py-28">
-          <div className={wrap}>
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 id="reviews-title" className="font-display text-4xl font-medium text-ink sm:text-5xl">
-                {testimonials.title}
-              </h2>
-              <p className="mt-4 text-ink/70">{testimonials.body}</p>
-            </div>
-            <span aria-hidden="true" className="mx-auto mt-5 block h-1 w-16 rounded-full" style={{ background: "linear-gradient(90deg, #0891b2, #c8913a)" }} />
-            <ul className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {testimonials.items.map((t) => (
-                <li key={t.name}>
-                  <figure className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white p-7 shadow-[0_30px_60px_-45px_rgba(14,26,23,0.45)] transition duration-300 hover:-translate-y-1.5 hover:border-pond-300 hover:shadow-[0_36px_60px_-36px_rgba(8,47,73,0.5)] sm:p-8">
-                    <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1" style={{ background: "linear-gradient(90deg, #0891b2, #0c4a6e)" }} />
-                    <div className="flex items-center justify-between">
-                      <span
-                        aria-hidden="true"
-                        className="flex h-12 w-12 items-center justify-center rounded-2xl text-white shadow-[0_12px_22px_-12px_rgba(8,47,73,0.7)]"
-                        style={{ background: "linear-gradient(140deg, #0891b2 0%, #0c4a6e 100%)" }}
-                      >
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M4 17v-4.500C4 8.900 6 6.600 9.500 6v2.300c-1.700.500-2.600 1.600-2.700 3.200H9.500V17H4zm10.500 0v-4.500c0-3.600 2-5.900 5.500-6.500v2.300c-1.700.500-2.600 1.600-2.700 3.200H20V17h-5.500z" />
-                        </svg>
-                      </span>
-                      <Stars />
-                    </div>
-                    <blockquote className="mt-6 flex-1 text-[15px] leading-relaxed text-ink/80">{t.quote}</blockquote>
-                    <figcaption className="mt-7 flex items-center gap-3 border-t border-ink/10 pt-5">
-                      <span
-                        className="flex h-12 w-12 flex-none items-center justify-center rounded-full font-display text-lg font-semibold text-white ring-4 ring-pond-100"
-                        style={{ background: "linear-gradient(140deg, #0e7490 0%, #082f49 100%)" }}
-                        aria-hidden="true"
-                      >
-                        {t.name[0]}
-                      </span>
-                      <span>
-                        <span className="block font-semibold text-ink">{t.name}</span>
-                        {t.place && (
-                          <span className="mt-0.5 flex items-center gap-1 text-sm text-ink/60">
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                              <path d="M12 21s7-6.200 7-11.500A7 7 0 0 0 5 9.500C5 14.800 12 21 12 21z" />
-                              <circle cx="12" cy="9.500" r="2.500" />
-                            </svg>
-                            {t.place}
-                          </span>
-                        )}
-                      </span>
-                    </figcaption>
-                  </figure>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+        <Testimonials />
       </main>
       <Footer />
     </>

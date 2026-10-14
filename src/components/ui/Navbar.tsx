@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { site } from "@/config/site";
 
 /**
- * Transparent over the 3D pond; turns solid brand blue (#0303AB) once the
+ * Transparent over the 3D pond; turns solid brand blue (#0504aa) once the
  * user scrolls. The Contact Us button inverts with it.
  */
 export function Navbar() {
@@ -28,18 +28,18 @@ export function Navbar() {
   const solid = scrolled || open;
 
   const contactCls = solid
-    ? "bg-white text-blue-600 hover:bg-white/90 focus-visible:ring-white focus-visible:ring-offset-blue-600"
-    : "bg-white text-blue-600 hover:bg-white/90 focus-visible:ring-white focus-visible:ring-offset-blue-600";
+    ? "bg-white text-[#0504aa] hover:bg-white/90 focus-visible:ring-white focus-visible:ring-offset-[#0504aa]"
+    : "bg-white text-[#0504aa] hover:bg-white/90 focus-visible:ring-white focus-visible:ring-offset-[#0504aa]";
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ${solid ? "border-white/10 bg-blue-600" : "border-transparent bg-blue-600/0"
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ${solid ? "border-white/10 bg-[#0504aa]" : "border-white/10 bg-[#0504aa]"
         }`}
     >
       {/* soft top scrim keeps links readable over the hero while the bar is transparent */}
       <div
         aria-hidden="true"
-        className={`pointer-events-none absolute inset-0 bg-gradient-to-b from-black/25 to-transparent transition-opacity duration-500 ${solid ? "opacity-0" : "opacity-100"
+        className={`pointer-events-none absolute inset-0 bg-gradient-to-b from-black/25 to-transparent transition-opacity duration-500 ${solid ? "opacity-0" : "opacity-0"
           }`}
       />
       <nav className="relative mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8" aria-label="Main">
@@ -53,7 +53,7 @@ export function Navbar() {
           <span className="font-display text-2xl font-semibold uppercase tracking-normal text-white">RUPA FEEDS</span>
         </a>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="ml-auto mr-4 hidden items-center gap-8 whitespace-nowrap md:flex md:gap-5 lg:gap-8">
           {site.nav.map((l) => (
             <li key={l.label} className={l.children ? "group relative" : undefined}>
               <a
@@ -81,7 +81,7 @@ export function Navbar() {
               {l.children && (
                 // pt-3 is an invisible bridge so the menu stays open while the cursor crosses the gap
                 <div className="invisible absolute left-1/2 top-full w-56 -translate-x-1/2 pt-3 opacity-0 transition-[opacity,visibility] duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-                  <ul className="overflow-hidden rounded-xl border border-white/15 bg-blue-600 p-1.5 shadow-[0_20px_40px_-16px_rgba(0,0,40,0.55)]">
+                  <ul className="overflow-hidden rounded-xl border border-white/15 bg-[#0504aa] p-1.5 shadow-[0_20px_40px_-16px_rgba(2,2,60,0.55)]">
                     {l.children.map((c) => (
                       <li key={c.label}>
                         <a
@@ -171,7 +171,7 @@ export function Navbar() {
             </li>
           ))}
         </ul>
-        <a href={site.navCta.href} className="btn mt-3 w-full bg-white text-[#0303AB] hover:bg-white/90 focus-visible:ring-white focus-visible:ring-offset-[#0303AB]">
+        <a href={site.navCta.href} className="btn mt-3 w-full bg-white text-[#0504aa] hover:bg-white/90 focus-visible:ring-white focus-visible:ring-offset-[#0504aa]">
           {site.navCta.label}
         </a>
       </div>

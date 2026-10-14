@@ -20,6 +20,12 @@ export const contact = {
     { label: "93948 90946", tel: "+919394890946" },
   ],
 
+  /** Number used by the floating Call / WhatsApp buttons shown on every page. */
+  floating: {
+    tel: "+919398490946",
+    whatsapp: "https://wa.me/919398490946",
+  },
+
   form: {
     title: "Send Us a Message",
     body: "Fill in the form and we will get back to you.",

@@ -12,7 +12,7 @@ export function ProductInfo({ product, index, align = "left" }: { product: Produ
       className={`glass-panel w-full max-w-[26rem] p-6 sm:p-8 ${align === "right" ? "md:ml-auto" : ""}`}
     >
       <div className="flex items-center justify-between gap-4">
-        <p className="eyebrow text-grain-300">
+        <p className="eyebrow text-pond-300">
           {String(index).padStart(2, "0")} — {product.zone}
         </p>
         <ZoneIcon id={product.id} />
@@ -26,7 +26,7 @@ export function ProductInfo({ product, index, align = "left" }: { product: Produ
         <div className="mt-5 flex items-center gap-2" aria-label={product.indicators.join(" and ")}>
           {product.indicators.map((ind, i) => (
             <span key={ind} className="contents">
-              {i > 0 && <span className="text-lg text-grain-300" aria-hidden="true">+</span>}
+              {i > 0 && <span className="text-lg text-pond-300" aria-hidden="true">+</span>}
               <span className="rounded-full border border-white/25 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em]">
                 {ind}
               </span>
@@ -38,7 +38,7 @@ export function ProductInfo({ product, index, align = "left" }: { product: Produ
       <ul className="mt-5 hidden space-y-2.5 text-sm text-white/80 sm:block">
         {product.features.map((f) => (
           <li key={f} className="flex gap-3">
-            <span className="mt-[7px] h-1.5 w-1.5 flex-none rounded-full bg-grain-300" aria-hidden="true" />
+            <span className="mt-[7px] h-1.5 w-1.5 flex-none rounded-full bg-pond-300" aria-hidden="true" />
             {f}
           </li>
         ))}
@@ -62,19 +62,19 @@ export function ZoneIcon({ id, className = "" }: { id: Product["id"]; className?
       <rect x="1" y="1" width="38" height="38" rx="9" fill="none" stroke="currentColor" strokeOpacity="0.3" />
       <path d="M6 12c3-2 5 2 8 0s5 2 8 0 5 2 8 0 4 2 4 0" fill="none" stroke="currentColor" strokeOpacity="0.7" strokeWidth="1.3" />
       <path d="M5 33h30" stroke="currentColor" strokeOpacity="0.4" strokeWidth="1.3" />
-      {id === "floating" && [12, 18, 24, 29].map((x) => <circle key={x} cx={x} cy="11.5" r="1.7" fill="#E3BE7A" />)}
+      {id === "floating" && [12, 18, 24, 29].map((x) => <circle key={x} cx={x} cy="11.5" r="1.7" fill="#A8A7F7" />)}
       {id === "sinking" &&
         [
           [20, 16],
           [17, 21],
           [22, 25],
           [19, 30],
-        ].map(([x, y]) => <circle key={`${x}${y}`} cx={x} cy={y} r="1.6" fill="#E3BE7A" />)}
+        ].map(([x, y]) => <circle key={`${x}${y}`} cx={x} cy={y} r="1.6" fill="#A8A7F7" />)}
       {id === "polyculture" && (
         <>
           <path d="M12 18l6 9h4l6-9" fill="none" stroke="currentColor" strokeOpacity="0.6" strokeWidth="1.1" />
-          <circle cx="18" cy="31" r="1.5" fill="#E3BE7A" />
-          <circle cx="22" cy="31" r="1.5" fill="#E3BE7A" />
+          <circle cx="18" cy="31" r="1.5" fill="#A8A7F7" />
+          <circle cx="22" cy="31" r="1.5" fill="#A8A7F7" />
         </>
       )}
     </svg>

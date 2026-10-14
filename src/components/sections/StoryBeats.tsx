@@ -67,7 +67,7 @@ export function UnderwaterTransition() {
   return (
     <Beat id="dive" label="Diving below the surface" className="items-center justify-center">
       <div data-panel className="pointer-events-auto max-w-xl text-center text-white">
-        <p className="eyebrow text-grain-300">Below the surface</p>
+        <p className="eyebrow text-pond-300">Below the surface</p>
         <p className="mt-4 font-display text-3xl font-medium leading-snug text-shadow-soft sm:text-4xl">{site.dive.body}</p>
       </div>
     </Beat>

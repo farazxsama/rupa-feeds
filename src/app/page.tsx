@@ -4,6 +4,7 @@ import { ProductOverview } from "@/components/sections/ProductOverview";
 import { WhyRupa } from "@/components/sections/WhyRupa";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/sections/Footer";
+import { Testimonials } from "@/components/sections/Testimonials";
 
 /**
  * HOMEPAGE
@@ -20,6 +21,7 @@ export default function HomePage() {
         <ProductOverview />
         <WhyRupa />
         <FinalCTA />
+        <Testimonials />
       </main>
       <Footer />
     </>

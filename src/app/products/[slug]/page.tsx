@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 }
 
 const wrap = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8";
-const blueTile = { background: "linear-gradient(140deg, #0891b2 0%, #0c4a6e 100%)" };
+const blueTile = { background: "linear-gradient(140deg, #2f2ee0 0%, #030378 100%)" };
 
 /** Generic line icons, picked by position so every product gets the same visual rhythm. */
 function Icon({ index, size = 24 }: { index: number; size?: number }) {
@@ -60,7 +60,7 @@ function Tick() {
 function SectionHeading({ eyebrow, title, id, center = false, light = false }: { eyebrow: string; title: string; id: string; center?: boolean; light?: boolean }) {
   return (
     <div className={center ? "text-center" : ""}>
-      <p className={`eyebrow ${light ? "text-grain-300" : "text-pond-500"}`}>{eyebrow}</p>
+      <p className={`eyebrow ${light ? "text-pond-300" : "text-pond-500"}`}>{eyebrow}</p>
       <h2 id={id} className={`mt-4 font-display text-3xl font-medium leading-tight sm:text-4xl lg:text-[2.75rem] ${light ? "text-white" : "text-ink"}`}>
         {title}
       </h2>
@@ -83,7 +83,7 @@ export default async function ProductPage({ params }: Params) {
         <section
           aria-labelledby="product-title"
           className="relative overflow-hidden pt-16 text-white"
-          style={{ background: "radial-gradient(120% 140% at 15% 0%, #0e7490 0%, #0c4a6e 50%, #082f49 100%)" }}
+          style={{ background: "radial-gradient(120% 140% at 15% 0%, #0504aa 0%, #030378 50%, #020250 100%)" }}
         >
           <div aria-hidden="true" className="pointer-events-none absolute -right-32 top-10 h-96 w-96 rounded-full bg-pond-300/15 blur-3xl" />
           <div className={`${wrap} relative grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-[1.1fr_1fr] lg:gap-16`}>
@@ -105,7 +105,7 @@ export default async function ProductPage({ params }: Params) {
                   {product.name}
                 </span>
               </nav>
-              <p className="eyebrow mt-8 text-grain-300">{product.tagline}</p>
+              <p className="eyebrow mt-8 text-pond-300">{product.tagline}</p>
               <h1 id="product-title" className="mt-4 font-display text-[2.75rem] font-semibold leading-[1.04] sm:text-6xl lg:text-7xl">
                 {product.name}
               </h1>
@@ -154,7 +154,7 @@ export default async function ProductPage({ params }: Params) {
               <div className="mt-6 grid gap-6 md:grid-cols-2">
                 {variants.items.map((v) => (
                   <article key={v.name} className="relative overflow-hidden rounded-3xl border border-ink/10 bg-white p-7 shadow-[0_30px_60px_-45px_rgba(14,26,23,0.45)] sm:p-8">
-                    <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1" style={{ background: "linear-gradient(90deg, #0891b2, #0c4a6e)" }} />
+                    <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1" style={{ background: "linear-gradient(90deg, #2f2ee0, #030378)" }} />
                     <h4 className="font-display text-xl font-medium text-pond-900">{v.name}</h4>
                     <p className="mt-3 text-[15px] leading-relaxed text-ink/75">{v.summary}</p>
                     <ul className="mt-5 space-y-3">
@@ -184,7 +184,7 @@ export default async function ProductPage({ params }: Params) {
                     detailedBenefits ? "sm:p-7" : "flex items-center gap-4"
                   }`}
                 >
-                  <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl text-white shadow-[0_10px_20px_-10px_rgba(8,47,73,0.7)]" style={blueTile}>
+                  <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl text-white shadow-[0_10px_20px_-10px_rgba(2,2,80,0.7)]" style={blueTile}>
                     <Icon index={i} />
                   </span>
                   <div className={detailedBenefits ? "mt-5" : ""}>
@@ -201,7 +201,7 @@ export default async function ProductPage({ params }: Params) {
         <section
           aria-labelledby="how-title"
           className="relative overflow-hidden py-20 sm:py-28"
-          style={{ background: "radial-gradient(90% 120% at 50% 0%, #0c4a6e 0%, #082f49 60%)" }}
+          style={{ background: "radial-gradient(90% 120% at 50% 0%, #030378 0%, #020250 60%)" }}
         >
           <div aria-hidden="true" className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-pond-500/20 blur-3xl" />
           <div className={`${wrap} relative`}>
@@ -217,7 +217,7 @@ export default async function ProductPage({ params }: Params) {
                   </span>
                   <span
                     className="relative flex h-12 w-12 items-center justify-center rounded-full font-display text-lg font-semibold"
-                    style={{ background: "linear-gradient(140deg, #e3be7a 0%, #c8913a 100%)", color: "#082f49" }}
+                    style={{ background: "linear-gradient(140deg, #c9c8fb 0%, #5b5af0 100%)", color: "#020250" }}
                     aria-hidden="true"
                   >
                     {i + 1}
@@ -306,7 +306,7 @@ export default async function ProductPage({ params }: Params) {
               {related.map((r) => (
                 <article
                   key={r.slug}
-                  className="group flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-[0_30px_60px_-45px_rgba(14,26,23,0.45)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_36px_60px_-36px_rgba(8,47,73,0.5)] sm:flex-row"
+                  className="group flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-[0_30px_60px_-45px_rgba(14,26,23,0.45)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_36px_60px_-36px_rgba(2,2,80,0.5)] sm:flex-row"
                 >
                   <div className="flex flex-none items-center justify-center bg-white p-6 sm:w-56">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -330,7 +330,7 @@ export default async function ProductPage({ params }: Params) {
         <section aria-labelledby="contact-cta-title" className="px-4 pb-24 sm:px-6 lg:px-8">
           <div
             className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] px-6 py-16 text-center sm:px-12 sm:py-20"
-            style={{ background: "radial-gradient(120% 140% at 50% 0%, #0e7490 0%, #0c4a6e 55%, #082f49 100%)" }}
+            style={{ background: "radial-gradient(120% 140% at 50% 0%, #0504aa 0%, #030378 55%, #020250 100%)" }}
           >
             <h2 id="contact-cta-title" className="mx-auto max-w-3xl font-display text-3xl font-medium leading-tight text-white sm:text-5xl">
               Talk to us about {product.name}

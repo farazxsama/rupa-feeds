@@ -73,8 +73,8 @@ export function DepthGauge() {
           </div>
         ))}
         <div ref={marker} className="absolute -left-[5px] -translate-y-1/2 transition-[top] duration-100">
-          <span className="block h-[11px] w-[11px] rounded-full border-2 border-grain-300 bg-pond-950" />
-          <span ref={readout} className="absolute right-6 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-full bg-pond-950/70 px-2 py-0.5 text-[11px] font-semibold text-grain-300 backdrop-blur" />
+          <span className="block h-[11px] w-[11px] rounded-full border-2 border-pond-300 bg-pond-950" />
+          <span ref={readout} className="absolute right-6 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-full bg-pond-950/70 px-2 py-0.5 text-[11px] font-semibold text-pond-300 backdrop-blur" />
         </div>
       </div>
     </div>
@@ -103,7 +103,7 @@ export function StoryFallback({ onEnable3D }: { onEnable3D?: () => void }) {
     <div className="absolute inset-0 flex items-center justify-center bg-pond-950 pt-16">
       <PondDiagram active={active} fit={portrait ? "contain" : "cover"} className="h-full w-full opacity-90" />
       {onEnable3D && (
-        <button type="button" onClick={onEnable3D} className="btn-ghost pointer-events-auto absolute bottom-6 right-6 z-10 !py-2 text-xs">
+        <button type="button" onClick={onEnable3D} className="btn-ghost pointer-events-auto absolute bottom-28 right-6 z-10 !py-2 text-xs">
           View 3D experience
         </button>
       )}

@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  background: #082f49;
+  background: #020250;
   color: #0e1a17;
   font-family: Manrope, system-ui, -apple-system, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -25,13 +25,13 @@ body {
     @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
   }
   .btn-primary {
-    @apply btn bg-grain-500 text-ink hover:bg-grain-300 focus-visible:ring-grain-300 focus-visible:ring-offset-pond-950;
+    @apply btn bg-white text-pond-700 hover:bg-pond-100 focus-visible:ring-white focus-visible:ring-offset-pond-950;
   }
   .btn-ghost {
     @apply btn border border-white/40 text-white hover:bg-white/10 focus-visible:ring-white focus-visible:ring-offset-pond-950;
   }
   .btn-dark {
-    @apply btn bg-pond-900 text-white hover:bg-pond-700 focus-visible:ring-pond-500 focus-visible:ring-offset-mist;
+    @apply btn bg-pond-700 text-white hover:bg-pond-900 focus-visible:ring-pond-500 focus-visible:ring-offset-mist;
   }
   .eyebrow {
     @apply text-[11px] font-semibold uppercase tracking-[0.28em];
@@ -42,7 +42,7 @@ body {
 }
 
 .text-shadow-soft {
-  text-shadow: 0 1px 24px rgba(4, 16, 28, 0.45);
+  text-shadow: 0 1px 24px rgba(2, 2, 40, 0.45);
 }
 
 /* Fallback diagram zone emphasis */
@@ -64,3 +64,9 @@ body {
   50% { transform: translateY(8px); opacity: 1; }
 }
 .animate-scroll-hint { animation: scroll-hint 2.2s ease-in-out infinite; }
+
+/* About page certificates: one copy of the list slides out as the next slides in */
+@keyframes cert-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

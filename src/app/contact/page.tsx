@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 /** CONTACT — static page; all details live in config/contact.ts, the form in ContactForm.tsx. */
 
 const wrap = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8";
-const blueTile = { background: "linear-gradient(140deg, #0891b2 0%, #0c4a6e 100%)" };
+const blueTile = { background: "linear-gradient(140deg, #2f2ee0 0%, #030378 100%)" };
 
 function LineIcon({ d }: { d: string }) {
   return (
@@ -33,7 +33,7 @@ const ICON = {
 function InfoCard({ icon, title, children }: { icon: string; title: string; children: ReactNode }) {
   return (
     <div className="flex h-full gap-4 rounded-3xl border border-ink/10 bg-white p-6 shadow-[0_30px_60px_-45px_rgba(14,26,23,0.45)] transition duration-200 hover:-translate-y-1 hover:border-pond-300">
-      <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl text-white shadow-[0_10px_20px_-10px_rgba(8,47,73,0.7)]" style={blueTile}>
+      <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl text-white shadow-[0_10px_20px_-10px_rgba(2,2,80,0.7)]" style={blueTile}>
         <LineIcon d={icon} />
       </span>
       <div className="min-w-0">
@@ -57,7 +57,7 @@ export default function ContactPage() {
         <section
           aria-labelledby="contact-title"
           className="relative overflow-hidden pt-16 text-white"
-          style={{ background: "radial-gradient(120% 140% at 15% 0%, #0e7490 0%, #0c4a6e 50%, #082f49 100%)" }}
+          style={{ background: "radial-gradient(120% 140% at 15% 0%, #0504aa 0%, #030378 50%, #020250 100%)" }}
         >
           <div aria-hidden="true" className="pointer-events-none absolute -right-32 top-0 h-96 w-96 rounded-full bg-pond-300/15 blur-3xl" />
           <div className={`${wrap} relative pb-24 pt-16 sm:pb-28 sm:pt-20`}>
@@ -72,7 +72,7 @@ export default function ContactPage() {
                 Contact
               </span>
             </nav>
-            <p className="eyebrow mt-8 text-grain-300">{hero.eyebrow}</p>
+            <p className="eyebrow mt-8 text-pond-300">{hero.eyebrow}</p>
             <h1 id="contact-title" className="mt-4 font-display text-[2.75rem] font-semibold leading-[1.04] sm:text-6xl lg:text-7xl">
               {hero.title}
             </h1>
@@ -133,9 +133,9 @@ export default function ContactPage() {
               <section
                 aria-labelledby="dealers-title"
                 className="relative overflow-hidden rounded-3xl p-7 text-white sm:p-8"
-                style={{ background: "radial-gradient(120% 140% at 0% 0%, #0e7490 0%, #0c4a6e 55%, #082f49 100%)" }}
+                style={{ background: "radial-gradient(120% 140% at 0% 0%, #0504aa 0%, #030378 55%, #020250 100%)" }}
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: "linear-gradient(140deg, #e3be7a 0%, #c8913a 100%)", color: "#082f49" }}>
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: "linear-gradient(140deg, #c9c8fb 0%, #5b5af0 100%)", color: "#020250" }}>
                   <LineIcon d={ICON.network} />
                 </span>
                 <h2 id="dealers-title" className="mt-5 font-display text-2xl font-medium">

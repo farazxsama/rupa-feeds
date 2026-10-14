@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { FloatingContact } from "@/components/ui/FloatingContact";
 
 export const metadata: Metadata = {
   title: "Rupa Feeds — Nutrition That Moves With Your Pond",
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#082f49",
+  themeColor: "#0504aa",
   width: "device-width",
   initialScale: 1,
 };
@@ -33,6 +34,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         {children}
+        {/* breathing room so the floating buttons never sit on the footer's last line */}
+        <div aria-hidden="true" className="h-24 bg-pond-950" />
+        <FloatingContact />
       </body>
     </html>
   );

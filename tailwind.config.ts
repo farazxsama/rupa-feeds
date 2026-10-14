@@ -1,8 +1,10 @@
 import type { Config } from "tailwindcss";
 
 /**
- * Provisional Rupa Feeds palette. Swap these for the official brand values
- * once the client supplies their guidelines — every component reads from here.
+ * Rupa Feeds UI palette: primary #0504AA (pond-700) with lighter / darker
+ * shades, plus white. Every page reads from here. The homepage 3D pond does
+ * NOT use these tokens — its water, light and fog colours live in
+ * src/components/3d and are independent of the site theme.
  */
 const config: Config = {
   content: ["./src/**/*.{ts,tsx}"],
@@ -11,15 +13,14 @@ const config: Config = {
       colors: {
         ink: "#0E1A17",
         pond: {
-          950: "#082F49",
-          900: "#0C4A6E",
-          800: "#155E75",
-          700: "#0E7490",
-          500: "#0891B2",
-          300: "#7DD3FC",
-          100: "#E0F2FE",
+          950: "#020250",
+          900: "#030378",
+          800: "#04048F",
+          700: "#0504AA",
+          500: "#2F2EE0",
+          300: "#A8A7F7",
+          100: "#E9E9FE",
         },
-        grain: { 700: "#8E6220", 500: "#C8913A", 300: "#E3BE7A" },
         mist: "#F4F1EA",
         sand: "#E8E1D2",
       },

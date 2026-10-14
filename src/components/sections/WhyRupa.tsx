@@ -14,7 +14,7 @@ export function WhyRupa() {
           <ol className="mt-10 space-y-8">
             {w.points.map((p, i) => (
               <li key={p.title} className="grid grid-cols-[auto_1fr] gap-5">
-                <span className="font-display text-2xl text-grain-700" aria-hidden="true">
+                <span className="font-display text-2xl text-pond-700" aria-hidden="true">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>

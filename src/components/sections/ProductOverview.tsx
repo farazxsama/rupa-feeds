@@ -36,11 +36,11 @@ export function ProductOverview() {
       ref={section}
       id="products"
       aria-labelledby="overview-title"
-      className="relative bg-gradient-to-b from-pond-950 via-[#0c4a6e] to-mist pb-24 pt-24 sm:pt-32"
+      className="relative bg-gradient-to-b from-pond-950 via-[#030378] to-mist pb-24 pt-24 sm:pt-32"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
-          <p className="eyebrow text-grain-300">{site.overview.eyebrow}</p>
+          <p className="eyebrow text-pond-300">{site.overview.eyebrow}</p>
           <h2 id="overview-title" className="mt-4 font-display text-4xl font-medium leading-tight text-white sm:text-5xl">
             {site.overview.title}
           </h2>
