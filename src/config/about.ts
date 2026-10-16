@@ -13,7 +13,7 @@ export const about = {
     eyebrow: "About us",
     title: "About Rupa Feeds",
     body: "A fast-growing aquaculture nutrition company committed to delivering high-quality fish feed solutions that help farmers achieve higher productivity and profitability.",
-    image: null as string | null,
+    image: "/img/about-banner.jpeg",
     imageLabel: "Hero image",
   },
 
@@ -25,7 +25,7 @@ export const about = {
       "At RUPA FEEDS, we combine modern nutritional science, quality raw materials, and advanced manufacturing processes to produce feeds that meet the specific requirements of different fish species and growth stages. Every product is carefully developed to provide balanced nutrition, ensuring optimal growth performance and healthier aquatic animals.",
       "Our commitment extends beyond feed manufacturing. We work closely with fish farmers, dealers, and aquaculture professionals by providing technical guidance, feeding recommendations, and farm management support. This farmer-first approach has helped us build long-term relationships and trust across the industry.",
     ],
-    image: null as string | null,
+    image: "/img/about-intro.jpeg",
     imageLabel: "Farm / harvest photo",
   },
 
