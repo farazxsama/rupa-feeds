@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/sections/Footer";
+import { PreFooterSections } from "@/components/sections/PreFooterSections";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { contact } from "@/config/contact";
 
@@ -194,6 +195,7 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
+        <PreFooterSections />
       </main>
       <Footer />
     </>

@@ -1,10 +1,10 @@
 import { Navbar } from "@/components/ui/Navbar";
 import { StoryExperience } from "@/components/sections/StoryExperience";
 import { ProductOverview } from "@/components/sections/ProductOverview";
-import { WhyRupa } from "@/components/sections/WhyRupa";
+// import { WhyRupa } from "@/components/sections/WhyRupa";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/sections/Footer";
-import { Testimonials } from "@/components/sections/Testimonials";
+import { PreFooterSections } from "@/components/sections/PreFooterSections";
 
 /**
  * HOMEPAGE
@@ -19,9 +19,9 @@ export default function HomePage() {
       <main id="main">
         <StoryExperience />
         <ProductOverview />
-        <WhyRupa />
+        {/* <WhyRupa /> */}
         <FinalCTA />
-        <Testimonials />
+        <PreFooterSections />
       </main>
       <Footer />
     </>

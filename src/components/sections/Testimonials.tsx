@@ -1,7 +1,8 @@
 import { about } from "@/config/about";
 
 /**
- * "What Our Customers Say" — shared by the Home and About pages.
+ * "What Our Customers Say" — one animated component shared by every page
+ * (via PreFooterSections): the review cards scroll continuously left → right.
  * Reviews come from config/about.ts (testimonials).
  */
 function Stars() {
@@ -30,49 +31,61 @@ export function Testimonials() {
           <p className="mt-4 text-ink/70">{testimonials.body}</p>
         </div>
         <span aria-hidden="true" className="mx-auto mt-5 block h-1 w-16 rounded-full" style={{ background: "linear-gradient(90deg, #2f2ee0, #5b5af0)" }} />
-        <ul className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.items.map((t) => (
-            <li key={t.name}>
-              <figure className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white p-7 shadow-[0_30px_60px_-45px_rgba(14,26,23,0.45)] transition duration-300 hover:-translate-y-1.5 hover:border-pond-300 hover:shadow-[0_36px_60px_-36px_rgba(2,2,80,0.5)] sm:p-8">
-                <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1" style={{ background: "linear-gradient(90deg, #2f2ee0, #030378)" }} />
-                <div className="flex items-center justify-between">
-                  <span
-                    aria-hidden="true"
-                    className="flex h-12 w-12 items-center justify-center rounded-2xl text-white shadow-[0_12px_22px_-12px_rgba(2,2,80,0.7)]"
-                    style={{ background: "linear-gradient(140deg, #2f2ee0 0%, #030378 100%)" }}
+        {/* same technique as the About page certificates: two identical copies on one
+           track, slid by exactly one copy with the shared cert-marquee keyframes —
+           played in reverse, so the cards travel left → right; pauses on hover */}
+        <div className="group/marquee -mb-20 mt-6 overflow-hidden pb-20 pt-6 motion-reduce:overflow-x-auto">
+          <div className="flex w-max animate-[cert-marquee_60s_linear_infinite_reverse] group-hover/marquee:[animation-play-state:paused] motion-reduce:animate-none">
+            {[0, 1].map((copy) => (
+              <ul key={copy} aria-hidden={copy === 1 ? true : undefined} className="flex">
+                {testimonials.items.map((t) => (
+                  <li
+                    key={t.name}
+                    className="w-[calc(100vw-2rem+1.5rem)] flex-none pr-6 sm:w-[calc(100vw-3rem+1.5rem)] md:w-[calc((min(100vw,80rem)-3rem-1.5rem)/2+1.5rem)] lg:w-[calc((min(100vw,80rem)-4rem-3rem)/3+1.5rem)]"
                   >
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M4 17v-4.500C4 8.900 6 6.600 9.500 6v2.300c-1.700.500-2.600 1.600-2.700 3.200H9.500V17H4zm10.500 0v-4.500c0-3.600 2-5.900 5.500-6.500v2.300c-1.700.500-2.600 1.600-2.700 3.200H20V17h-5.500z" />
-                    </svg>
-                  </span>
-                  <Stars />
-                </div>
-                <blockquote className="mt-6 flex-1 text-[15px] leading-relaxed text-ink/80">{t.quote}</blockquote>
-                <figcaption className="mt-7 flex items-center gap-3 border-t border-ink/10 pt-5">
-                  <span
-                    className="flex h-12 w-12 flex-none items-center justify-center rounded-full font-display text-lg font-semibold text-white ring-4 ring-pond-100"
-                    style={{ background: "linear-gradient(140deg, #0504aa 0%, #020250 100%)" }}
-                    aria-hidden="true"
-                  >
-                    {t.name[0]}
-                  </span>
-                  <span>
-                    <span className="block font-semibold text-ink">{t.name}</span>
-                    {t.place && (
-                      <span className="mt-0.5 flex items-center gap-1 text-sm text-ink/60">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                          <path d="M12 21s7-6.200 7-11.500A7 7 0 0 0 5 9.500C5 14.800 12 21 12 21z" />
-                          <circle cx="12" cy="9.500" r="2.500" />
-                        </svg>
-                        {t.place}
-                      </span>
-                    )}
-                  </span>
-                </figcaption>
-              </figure>
-            </li>
-          ))}
-        </ul>
+                    <figure className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white p-7 shadow-[0_30px_60px_-45px_rgba(14,26,23,0.45)] transition duration-300 hover:-translate-y-1.5 hover:border-pond-300 hover:shadow-[0_36px_60px_-36px_rgba(2,2,80,0.5)] sm:p-8">
+                      <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1" style={{ background: "linear-gradient(90deg, #2f2ee0, #030378)" }} />
+                      <div className="flex items-center justify-between">
+                        <span
+                          aria-hidden="true"
+                          className="flex h-12 w-12 items-center justify-center rounded-2xl text-white shadow-[0_12px_22px_-12px_rgba(2,2,80,0.7)]"
+                          style={{ background: "linear-gradient(140deg, #2f2ee0 0%, #030378 100%)" }}
+                        >
+                          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M4 17v-4.500C4 8.900 6 6.600 9.500 6v2.300c-1.700.500-2.600 1.600-2.700 3.200H9.500V17H4zm10.500 0v-4.500c0-3.600 2-5.900 5.500-6.500v2.300c-1.700.500-2.600 1.600-2.700 3.200H20V17h-5.500z" />
+                          </svg>
+                        </span>
+                        <Stars />
+                      </div>
+                      <blockquote className="mt-6 flex-1 text-[15px] leading-relaxed text-ink/80">{t.quote}</blockquote>
+                      <figcaption className="mt-7 flex items-center gap-3 border-t border-ink/10 pt-5">
+                        <span
+                          className="flex h-12 w-12 flex-none items-center justify-center rounded-full font-display text-lg font-semibold text-white ring-4 ring-pond-100"
+                          style={{ background: "linear-gradient(140deg, #0504aa 0%, #020250 100%)" }}
+                          aria-hidden="true"
+                        >
+                          {t.name[0]}
+                        </span>
+                        <span>
+                          <span className="block font-semibold text-ink">{t.name}</span>
+                          {t.place && (
+                            <span className="mt-0.5 flex items-center gap-1 text-sm text-ink/60">
+                              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                                <path d="M12 21s7-6.200 7-11.500A7 7 0 0 0 5 9.500C5 14.800 12 21 12 21z" />
+                                <circle cx="12" cy="9.500" r="2.500" />
+                              </svg>
+                              {t.place}
+                            </span>
+                          )}
+                        </span>
+                      </figcaption>
+                    </figure>
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

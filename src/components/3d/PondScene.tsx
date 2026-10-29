@@ -12,14 +12,10 @@ import { WaterSurface } from "./WaterSurface";
 import { UnderwaterEnvironment } from "./UnderwaterEnvironment";
 import { PondFloor } from "./PondFloor";
 import { PondBanks } from "./PondBanks";
-import { AquaticPlants } from "./AquaticPlants";
-import { FeedingNet } from "./FeedingNet";
 import { FishSchool } from "./FishSchool";
 import { Shrimp } from "./Shrimp";
 import { FeedingBoat } from "./FeedingBoat";
 import { FloatingPellets } from "./FloatingPellets";
-import { SinkingPellets } from "./SinkingPellets";
-import { PolyculturePellets } from "./PolyculturePellets";
 import { SurfaceRipples } from "./SurfaceRipples";
 import { CameraController } from "./CameraController";
 
@@ -192,13 +188,9 @@ export default function PondScene({ quality, active, onReady, onContextLost }: P
         <UnderwaterEnvironment rays={quality.rays} particles={quality.particles} bubbles={quality.bubbles} />
         <PondFloor segments={quality.terrainSegments} />
         <PondBanks reeds={quality.reeds} trees={quality.trees} />
-        <AquaticPlants kind="submerged" count={quality.plants} />
-        <FeedingNet />
         <Animals q={quality} />
         <FeedingBoat />
         <FloatingPellets count={quality.pellets.floating} />
-        <SinkingPellets count={quality.pellets.sinking} />
-        <PolyculturePellets count={quality.pellets.poly} />
         <WaterSurface segments={quality.waterSegments} />
         <SurfaceRipples />
         <ReadySignal onReady={onReady} />

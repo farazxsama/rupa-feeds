@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/sections/Footer";
+import { PreFooterSections } from "@/components/sections/PreFooterSections";
 import { productDetails } from "@/config/productDetails";
 import { about } from "@/config/about";
 import { site } from "@/config/site";
@@ -201,6 +202,7 @@ export default function ProductsPage() {
             </div>
           </div>
         </section>
+        <PreFooterSections />
       </main>
       <Footer />
     </>

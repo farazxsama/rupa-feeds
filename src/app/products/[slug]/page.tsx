@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/sections/Footer";
+import { PreFooterSections } from "@/components/sections/PreFooterSections";
 import { productDetails, getProductDetail } from "@/config/productDetails";
 import { about } from "@/config/about";
 import { site } from "@/config/site";
@@ -345,6 +346,7 @@ export default async function ProductPage({ params }: Params) {
             </div>
           </div>
         </section>
+        <PreFooterSections />
       </main>
       <Footer />
     </>

@@ -76,20 +76,19 @@ export function UnderwaterTransition() {
 
 export function SinkingFeedSection() {
   return (
-    <Beat id="sinking" label="Sinking feed" className="items-end md:items-center">
-      <div data-panel className="pointer-events-auto mx-auto w-full max-w-7xl">
-        <ProductInfo product={products.sinking} index={2} align="right" />
-      </div>
+    // no text panel: the section only keeps its scroll length so the camera
+    // timing of the underwater scene is unchanged
+    <Beat id="sinking" label="Underwater" className="items-end md:items-center">
+      {null}
     </Beat>
   );
 }
 
 export function PolycultureFeedSection() {
   return (
-    <Beat id="polyculture" label="Polyculture feed" className="items-end md:items-center">
-      <div data-panel className="pointer-events-auto mx-auto w-full max-w-7xl">
-        <ProductInfo product={products.polyculture} index={3} />
-      </div>
+    // no text panel (see SinkingFeedSection)
+    <Beat id="polyculture" label="Pond bottom" className="items-end md:items-center">
+      {null}
     </Beat>
   );
 }

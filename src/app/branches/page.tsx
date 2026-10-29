@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/sections/Footer";
+import { PreFooterSections } from "@/components/sections/PreFooterSections";
 import { branches, branchesPage } from "@/config/branches";
 import { site } from "@/config/site";
 
@@ -158,6 +159,7 @@ export default function BranchesPage() {
             </div>
           </div>
         </section>
+        <PreFooterSections />
       </main>
       <Footer />
     </>
