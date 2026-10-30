@@ -27,12 +27,9 @@ export const ProductCard = forwardRef<HTMLDivElement, { product: Product; show3D
       >
         {!show3D && img && (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={img} alt={`${product.name} packaging (placeholder)`} className="absolute left-1/2 top-1/2 h-[78%] -translate-x-1/2 -translate-y-1/2 rounded-md shadow-xl" />
+          <img src={img} alt={`${product.name} packaging`} className="absolute left-1/2 top-1/2 h-[92%] -translate-x-1/2 -translate-y-1/2 mix-blend-multiply" />
         )}
-        {show3D && <span className="sr-only">{product.name} packaging, 3D placeholder render</span>}
-        <span className="absolute left-4 top-4 rounded-full bg-white/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-ink/70 backdrop-blur">
-          Placeholder pack
-        </span>
+        {show3D && <span className="sr-only">{product.name} packaging, 3D render</span>}
       </div>
       <div className="flex flex-1 flex-col p-6 sm:p-7">
         <div className="flex items-center gap-3 text-pond-700">

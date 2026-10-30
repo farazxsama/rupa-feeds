@@ -12,8 +12,8 @@ export function BrandLogo({ className = "", tone = "light" }: { className?: stri
   const color = tone === "light" ? "text-white" : "text-ink";
   return (
     <span className={`inline-flex items-baseline gap-2 ${color} ${className}`} aria-label={site.brand}>
-      <span className="font-display text-xl font-semibold tracking-[0.08em]">RUPA</span>
-      <span className="text-[11px] font-semibold tracking-brand opacity-80">FEEDS</span>
+      <span className="font-display text-[22px] font-semibold tracking-[0.08em]">RUPA</span>
+      <span className="font-display text-[22px] font-semibold tracking-[0.08em]">FEEDS</span>
     </span>
   );
 }

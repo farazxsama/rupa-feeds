@@ -21,7 +21,7 @@ const wrap = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8";
 export function YouTubeVideos({ title = defaults.title, subtitle = defaults.subtitle, videos = defaults.items }: Props) {
   if (videos.length === 0) return null;
   return (
-    <section aria-labelledby="videos-title" className="bg-mist py-20 sm:py-28">
+    <section aria-labelledby="videos-title" className="bg-white py-20 sm:py-28">
       <div className={wrap}>
         <div className="mx-auto max-w-2xl text-center">
           <h2 id="videos-title" className="font-display text-4xl font-medium text-ink sm:text-5xl">

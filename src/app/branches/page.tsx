@@ -91,7 +91,7 @@ export default function BranchesPage() {
             <div className="mx-auto max-w-2xl text-center">
               <p className="eyebrow text-pond-500">Branch network</p>
               <h2 id="branch-list-title" className="mt-4 font-display text-3xl font-medium leading-tight text-ink sm:text-4xl">
-                Our {branches.length} branches
+                Our Branches
               </h2>
               <span aria-hidden="true" className="mx-auto mt-5 block h-1 w-16 rounded-full" style={{ background: "linear-gradient(90deg, #2f2ee0, #5b5af0)" }} />
             </div>

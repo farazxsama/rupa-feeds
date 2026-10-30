@@ -110,7 +110,7 @@ export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main id="main" className="bg-blue-100">
+      <main id="main" className="bg-white">
         {/* Hero */}
         <section
           aria-labelledby="about-title"
@@ -172,7 +172,7 @@ export default function AboutPage() {
           </div>
 
           <div className={`${wrap} mt-16 sm:mt-20`}>
-            <div className="overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-[0_30px_60px_-45px_rgba(14,26,23,0.45)]">
+            <div className="overflow-hidden rounded-3xl border border-ink/10 bg-blue-100 shadow-[0_30px_60px_-45px_rgba(14,26,23,0.45)]">
               <div className="p-7 sm:p-10">
                 <p className="eyebrow text-pond-500">The RUPA difference</p>
                 <h3 className="mt-3 font-display text-2xl font-medium text-ink sm:text-3xl">{why.title}</h3>
@@ -180,7 +180,7 @@ export default function AboutPage() {
                   {why.points.map((p, i) => (
                     <li
                       key={p}
-                      className="group flex items-start gap-4 rounded-2xl border border-ink/10 bg-mist/60 p-5 transition duration-200 hover:-translate-y-0.5 hover:border-pond-300 hover:bg-pond-100/60"
+                      className="group flex items-start gap-4 rounded-2xl border border-ink/10 bg-white p-5 transition duration-200 hover:-translate-y-0.5"
                     >
                       <span
                         className="flex h-12 w-12 flex-none items-center justify-center rounded-xl text-white shadow-[0_10px_20px_-10px_rgba(2,2,80,0.7)]"
@@ -275,7 +275,7 @@ export default function AboutPage() {
         </section>
 
         {/* Journey */}
-        <section aria-labelledby="journey-title" className="bg-white py-20 sm:py-24">
+        {/* <section aria-labelledby="journey-title" className="bg-white py-20 sm:py-24">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <h2 id="journey-title" className="text-center font-display text-4xl font-medium text-ink sm:text-5xl">
               {journey.title}
@@ -297,7 +297,7 @@ export default function AboutPage() {
               </p>
             )}
           </div>
-        </section>
+        </section> */}
 
         {/* Core values */}
         <section aria-labelledby="values-title" className="py-20 sm:py-28">

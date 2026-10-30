@@ -8,9 +8,9 @@
  * the water) — no nutritional or scientific claims have been invented.
  * Replace / extend with client-approved copy only.
  *
- * `packagingTexture`: drop the real bag artwork (front face, ~1024x1400 JPG/PNG/WebP)
- * into /public/packaging and point to it here. When the file is missing the
- * 3D bag falls back to a clearly-labelled placeholder texture.
+ * `packagingTexture`: a front-on photo of the bag on a transparent or white
+ * background. The 3D bag's shape and print are both generated from this image.
+ * When null, the 3D bag falls back to a clearly-labelled placeholder texture.
  */
 
 export type ProductId = "floating" | "sinking" | "polyculture";
@@ -48,7 +48,7 @@ export const products: Record<ProductId, Product> = {
       "Consistent pellet performance",
     ],
     href: "/products/floating-feeds",
-    packagingTexture: null, // e.g. "/packaging/floating-feed-front.jpg"
+    packagingTexture: "/img/products/floating-bag.png",
     accent: "#C8913A",
   },
   sinking: {
@@ -64,7 +64,7 @@ export const products: Record<ProductId, Product> = {
       "Suitable for bottom / deeper feeding fish",
     ],
     href: "/products/sinking-feeds",
-    packagingTexture: null, // e.g. "/packaging/sinking-feed-front.jpg"
+    packagingTexture: "/img/products/sinking-bag.jpeg",
     accent: "#3E7F6E",
   },
   polyculture: {
@@ -81,7 +81,7 @@ export const products: Record<ProductId, Product> = {
     ],
     indicators: ["Fish", "Shrimp"],
     href: "/products/poly-culture-feeds",
-    packagingTexture: null, // e.g. "/packaging/polyculture-feed-front.jpg"
+    packagingTexture: "/img/products/polyculture-bag.png",
     accent: "#8E6220",
   },
 };

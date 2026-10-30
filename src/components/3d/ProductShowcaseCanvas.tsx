@@ -37,11 +37,11 @@ function BagStage({ product, index }: { product: Product; index: number }) {
   return (
     <>
       <PerspectiveCamera makeDefault position={[0, 0.05, 2.7]} fov={34} />
-      <ambientLight intensity={0.7} />
-      <directionalLight position={[2.5, 3, 4]} intensity={2.2} color="#fff4e2" />
+      <ambientLight intensity={1.15} />
+      <directionalLight position={[2.5, 3, 4]} intensity={2} color="#fff8ee" />
       <directionalLight position={[-3, 1, -2]} intensity={0.8} color="#cfe3da" />
       <group ref={group}>
-        <ProductBag texture={texture} rotation={[0.04, 0, 0.02]} />
+        <ProductBag texture={texture} seed={index * 2.3} rotation={[0.04, 0, 0.02]} />
       </group>
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.78, 0]}>
         <planeGeometry args={[1.8, 0.9]} />

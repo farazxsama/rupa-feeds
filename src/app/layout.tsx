@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         {children}
         {/* breathing room so the floating buttons never sit on the footer's last line */}
-        <div aria-hidden="true" className="h-24 bg-pond-950" />
+        <div aria-hidden="true" className="h-24 bg-[#0504aa]" />
         <FloatingContact />
       </body>
     </html>
