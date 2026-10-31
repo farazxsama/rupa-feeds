@@ -88,8 +88,8 @@ export const site = {
   footer: {
     note: "All Rights Reserved.",
     contact: [
-      { label: "Email", value: "hello@rupafeeds.example" },
-      { label: "Phone", value: "+91 00000 00000" },
+      { label: "Email", value: "rupafeeds@gmail.com" },
+      { label: "Phone", value: "9440341234" },
     ],
   },
 };

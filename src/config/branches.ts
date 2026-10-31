@@ -12,8 +12,8 @@ export interface Branch {
   mapSrc: string;
 }
 
-const phone = { label: "94404 31234", tel: "+919440431234" };
-const email = "Rupafeed@gmail.com";
+const phone = { label: "9440341234", tel: "9440341234" };
+const email = "rupafeeds@gmail.com";
 
 export const branchesPage = {
   hero: {

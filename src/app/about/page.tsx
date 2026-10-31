@@ -3,7 +3,6 @@ import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { PreFooterSections } from "@/components/sections/PreFooterSections";
 import { about } from "@/config/about";
-import { site } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "About Us — Rupa Feeds",
@@ -105,49 +104,24 @@ function SocialIcon({ name }: { name: string }) {
 const wrap = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8";
 
 export default function AboutPage() {
-  const { hero, intro, why, purpose, journey, values, csr } = about;
+  const { intro, why, purpose, journey, values, csr } = about;
 
   return (
     <>
       <Navbar />
       <main id="main" className="bg-white">
-        {/* Hero */}
-        <section
-          aria-labelledby="about-title"
-          className="relative overflow-hidden pt-16 text-white"
-          style={{ background: "radial-gradient(120% 140% at 15% 0%, #0504aa 0%, #030378 50%, #020250 100%)" }}
-        >
-          <div className={`${wrap} grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.05fr_1fr] lg:py-24`}>
-            <div>
-              <nav aria-label="Breadcrumb" className="text-sm text-white/65">
-                <a href="/" className="hover:text-white">
-                  Home
-                </a>
-                <span className="mx-2" aria-hidden="true">
-                  /
-                </span>
-                <span aria-current="page" className="text-white">
-                  About
-                </span>
-              </nav>
-              <p className="eyebrow mt-8 text-pond-300">{hero.eyebrow}</p>
-              <h1 id="about-title" className="mt-4 font-display text-[2.6rem] font-medium leading-[1.05] sm:text-6xl">
-                {hero.title}
-              </h1>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">{hero.body}</p>
-              <div className="mt-9 flex flex-wrap gap-3">
-                <a href="/products" className="btn-primary">
-                  Explore Products
-                </a>
-                <a href={site.navCta.href} className="btn-ghost">
-                  {site.navCta.label}
-                </a>
-              </div>
-            </div>
-            <div className="aspect-[4/3] overflow-hidden rounded-3xl border border-white/15 shadow-[0_30px_70px_-30px_rgba(0,0,0,0.6)]">
-              <Picture src={hero.image} label={hero.imageLabel} />
-            </div>
-          </div>
+        {/* Hero: full-screen background video only */}
+        <section aria-label="About Rupa Feeds" className="relative h-screen w-full overflow-hidden">
+          <video
+            src="/video/about-page-video.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
         </section>
 
         {/* About + why farmers choose us */}

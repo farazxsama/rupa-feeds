@@ -14,16 +14,13 @@ export const contact = {
     title: "Our Location",
     lines: ["Madepalle, Eluru", "Andhra Pradesh 534004"],
   },
-  emails: ["Rupafeed@gmail.com", "support@rupafeeds.com"],
-  phones: [
-    { label: "94404 31234", tel: "+919440431234" },
-    { label: "93948 90946", tel: "+919394890946" },
-  ],
+  emails: ["rupafeeds@gmail.com"],
+  phones: [{ label: "9440341234", tel: "9440341234" }],
 
   /** Number used by the floating Call / WhatsApp buttons shown on every page. */
   floating: {
-    tel: "+919398490946",
-    whatsapp: "https://wa.me/919398490946",
+    tel: "9440341234",
+    whatsapp: "https://wa.me/919440341234",
   },
 
   form: {

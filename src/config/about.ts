@@ -97,7 +97,7 @@ export const about = {
       { label: "X (Twitter)", href: "https://x.com/RUPA_PELLETS" },
       { label: "Instagram", href: "https://www.instagram.com/rupa_feeds/?hl=en" },
       { label: "YouTube", href: "https://www.youtube.com/@RUPAFEEDS" },
-      { label: "WhatsApp", href: "https://wa.me/919440431234" },
+      { label: "WhatsApp", href: "https://wa.me/919440341234" },
     ],
   },
 
