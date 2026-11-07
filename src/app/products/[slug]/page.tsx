@@ -142,7 +142,7 @@ export default async function ProductPage({ params }: Params) {
         <section id="overview" aria-labelledby="overview-title" className="scroll-mt-20 py-20 sm:py-28">
           <div className={`${wrap} grid gap-10 lg:grid-cols-[1fr_1.25fr] lg:gap-16`}>
             <SectionHeading id="overview-title" eyebrow="Product overview" title={overview.title} />
-            <div className="space-y-5 text-base leading-relaxed text-ink/75 sm:text-[17px]">
+            <div className="space-y-5 text-base leading-relaxed text-black sm:text-[17px]">
               {overview.paragraphs.map((p) => (
                 <p key={p.slice(0, 32)}>{p}</p>
               ))}
@@ -157,7 +157,7 @@ export default async function ProductPage({ params }: Params) {
                   <article key={v.name} className="relative overflow-hidden rounded-3xl border border-ink/10 bg-white p-7 shadow-[0_30px_60px_-45px_rgba(14,26,23,0.45)] sm:p-8">
                     <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1" style={{ background: "linear-gradient(90deg, #2f2ee0, #030378)" }} />
                     <h4 className="font-display text-xl font-medium text-pond-900">{v.name}</h4>
-                    <p className="mt-3 text-[15px] leading-relaxed text-ink/75">{v.summary}</p>
+                    <p className="mt-3 text-[15px] leading-relaxed text-black">{v.summary}</p>
                     <ul className="mt-5 space-y-3">
                       {v.points.map((pt) => (
                         <li key={pt} className="flex gap-3 text-[15px] leading-relaxed text-ink/80">
@@ -181,16 +181,15 @@ export default async function ProductPage({ params }: Params) {
               {benefits.items.map((b, i) => (
                 <li
                   key={b.title}
-                  className={`rounded-3xl border border-ink/10 bg-mist/60 p-6 transition duration-200 hover:-translate-y-1 hover:border-pond-300 hover:bg-pond-100/50 ${
-                    detailedBenefits ? "sm:p-7" : "flex items-center gap-4"
-                  }`}
+                  className={`rounded-3xl border border-ink/10 bg-mist/60 p-6 transition duration-200 hover:-translate-y-1 hover:border-pond-300 hover:bg-pond-100/50 ${detailedBenefits ? "sm:p-7" : "flex items-center gap-4"
+                    }`}
                 >
                   <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl text-white shadow-[0_10px_20px_-10px_rgba(2,2,80,0.7)]" style={blueTile}>
                     <Icon index={i} />
                   </span>
                   <div className={detailedBenefits ? "mt-5" : ""}>
                     <h3 className={detailedBenefits ? "font-display text-xl font-medium text-ink" : "text-[15px] font-semibold leading-snug text-ink"}>{b.title}</h3>
-                    {b.body && <p className="mt-2 text-[15px] leading-relaxed text-ink/70">{b.body}</p>}
+                    {b.body && <p className="mt-2 text-[15px] leading-relaxed text-black">{b.body}</p>}
                   </div>
                 </li>
               ))}
@@ -236,7 +235,7 @@ export default async function ProductPage({ params }: Params) {
           <div className={`${wrap} grid gap-10 lg:grid-cols-[1fr_1.25fr] lg:gap-16`}>
             <div>
               <SectionHeading id="species-title" eyebrow="Where it fits" title={species.title} />
-              <p className="mt-6 leading-relaxed text-ink/75">{species.intro}</p>
+              <p className="mt-6 leading-relaxed text-black">{species.intro}</p>
               <div className="mt-8 max-w-sm overflow-hidden rounded-3xl border border-ink/10 bg-white p-6 shadow-[0_30px_60px_-45px_rgba(14,26,23,0.45)]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={product.image} alt={product.imageAlt} className="mx-auto aspect-square w-full object-contain" />
@@ -256,7 +255,7 @@ export default async function ProductPage({ params }: Params) {
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 rounded-2xl border-l-4 border-pond-500 bg-pond-100/60 px-5 py-4 text-[15px] leading-relaxed text-ink/75">{species.note}</p>
+              <p className="mt-6 rounded-2xl border-l-4 border-pond-500 bg-pond-100/60 px-5 py-4 text-[15px] leading-relaxed text-black">{species.note}</p>
             </div>
           </div>
         </section>
@@ -268,7 +267,7 @@ export default async function ProductPage({ params }: Params) {
               <div className="grid gap-10 p-7 sm:p-10 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
                 <div>
                   <SectionHeading id="why-title" eyebrow="Why choose Rupa Feeds" title={why.title} />
-                  <p className="mt-6 leading-relaxed text-ink/75">{why.body}</p>
+                  <p className="mt-6 leading-relaxed text-black">{why.body}</p>
                 </div>
                 <ul className="grid content-start gap-3">
                   {why.points.map((pt, i) => (
@@ -316,7 +315,7 @@ export default async function ProductPage({ params }: Params) {
                   <div className="flex flex-1 flex-col border-t border-ink/10 p-7 sm:border-l sm:border-t-0">
                     <p className="eyebrow text-pond-500">{r.tagline}</p>
                     <h3 className="mt-3 font-display text-2xl font-medium text-ink">{r.name}</h3>
-                    <p className="mt-2 flex-1 text-[15px] leading-relaxed text-ink/70">{r.cardDescription}</p>
+                    <p className="mt-2 flex-1 text-[15px] leading-relaxed text-black">{r.cardDescription}</p>
                     <a href={`/products/${r.slug}`} className="btn-dark mt-6 self-start">
                       View {r.name} <span aria-hidden="true">→</span>
                     </a>

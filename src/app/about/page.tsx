@@ -134,7 +134,7 @@ export default function AboutPage() {
               <h2 id="intro-title" className="mt-4 font-display text-4xl font-medium leading-tight text-ink sm:text-5xl">
                 {intro.title}
               </h2>
-              <div className="mt-7 space-y-5 text-base leading-relaxed text-ink/75 sm:text-[17px]">
+              <div className="mt-7 space-y-5 text-base leading-relaxed text-black sm:text-[17px]">
                 {intro.paragraphs.map((p) => (
                   <p key={p.slice(0, 32)}>{p}</p>
                 ))}
@@ -263,7 +263,7 @@ export default function AboutPage() {
                     <span className="absolute -left-[34px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-white bg-pond-500" aria-hidden="true" />
                     <p className="eyebrow text-pond-500">{m.year}</p>
                     <h3 className="mt-1.5 text-lg font-semibold text-ink">{m.title}</h3>
-                    <p className="mt-1.5 leading-relaxed text-ink/70">{m.body}</p>
+                    <p className="mt-1.5 leading-relaxed text-black">{m.body}</p>
                   </li>
                 ))}
               </ol>
@@ -304,7 +304,7 @@ export default function AboutPage() {
                       <ValueIcon name={v.icon} />
                     </span>
                     <h3 className="relative mt-7 font-display text-2xl font-medium text-ink">{v.title}</h3>
-                    <p className="relative mt-3 text-[15px] leading-relaxed text-ink/70">{v.body}</p>
+                    <p className="relative mt-3 text-[15px] leading-relaxed text-black">{v.body}</p>
                     <span
                       aria-hidden="true"
                       className="absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
@@ -323,7 +323,7 @@ export default function AboutPage() {
             <h2 id="csr-title" className="font-display text-3xl font-medium text-pond-900 sm:text-4xl">
               {csr.title}
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-ink/70">{csr.body}</p>
+            <p className="mx-auto mt-4 max-w-xl text-black">{csr.body}</p>
             <ul className="mt-8 flex flex-wrap justify-center gap-4">
               {csr.links.map((l) => (
                 <li key={l.label}>

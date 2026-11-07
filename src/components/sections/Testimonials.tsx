@@ -22,13 +22,13 @@ const wrap = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8";
 export function Testimonials() {
   const { testimonials } = about;
   return (
-    <section aria-labelledby="reviews-title" className="bg-gradient-to-b from-white to-pond-100/70 py-20 sm:py-28">
+    <section aria-labelledby="reviews-title" className="bg-gradient-to-b from-white to-pond-100/70 pt-8 sm:pt-10 pb-16 sm:pb-20">
       <div className={wrap}>
         <div className="mx-auto max-w-2xl text-center">
           <h2 id="reviews-title" className="font-display text-4xl font-medium text-ink sm:text-5xl">
             {testimonials.title}
           </h2>
-          <p className="mt-4 text-ink/70">{testimonials.body}</p>
+          {/* <p className="mt-4 text-black">{testimonials.body}</p> */}
         </div>
         <span aria-hidden="true" className="mx-auto mt-5 block h-1 w-16 rounded-full" style={{ background: "linear-gradient(90deg, #2f2ee0, #5b5af0)" }} />
         {/* same technique as the About page certificates: two identical copies on one

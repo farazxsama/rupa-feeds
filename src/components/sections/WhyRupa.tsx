@@ -19,7 +19,7 @@ export function WhyRupa() {
                 </span>
                 <div>
                   <h3 className="text-lg font-semibold text-ink">{p.title}</h3>
-                  <p className="mt-1.5 leading-relaxed text-ink/70">{p.body}</p>
+                  <p className="mt-1.5 leading-relaxed text-black">{p.body}</p>
                 </div>
               </li>
             ))}

@@ -5,7 +5,7 @@ import { createRef, useEffect, useMemo, useRef, useState } from "react";
 import { productList } from "@/config/products";
 import { site } from "@/config/site";
 import { hasWebGL } from "@/lib/quality";
-import { ProductCard } from "@/components/ui/ProductCard";
+import { ProductCard, type CardPointerState } from "@/components/ui/ProductCard";
 
 const ProductShowcaseCanvas = dynamic(() => import("@/components/3d/ProductShowcaseCanvas"), { ssr: false });
 
@@ -16,6 +16,10 @@ const ProductShowcaseCanvas = dynamic(() => import("@/components/3d/ProductShowc
 export function ProductOverview() {
   const section = useRef<HTMLElement>(null);
   const slots = useMemo(() => productList.map(() => createRef<HTMLDivElement>()), []);
+  const pointerStates = useMemo<CardPointerState[]>(
+    () => productList.map(() => ({ x: 0, y: 0, active: false })),
+    []
+  );
   const [near, setNear] = useState(false);
   const [can3D, setCan3D] = useState(false);
 
@@ -36,7 +40,7 @@ export function ProductOverview() {
       ref={section}
       id="products"
       aria-labelledby="overview-title"
-      className="relative bg-gradient-to-b from-pond-950 via-[#030378] to-mist pb-24 pt-24 sm:pt-32"
+      className="relative bg-gradient-to-b from-pond-950 via-[#030378] to-white pb-24 pt-24 sm:pt-32"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
@@ -47,11 +51,23 @@ export function ProductOverview() {
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {productList.map((p, i) => (
-            <ProductCard key={p.id} ref={slots[i]} product={p} show3D={show3D} />
+            <ProductCard
+              key={p.id}
+              ref={slots[i]}
+              product={p}
+              show3D={show3D}
+              pointerState={pointerStates[i]}
+            />
           ))}
         </div>
       </div>
-      {show3D && <ProductShowcaseCanvas products={productList} slots={slots} />}
+      {show3D && (
+        <ProductShowcaseCanvas
+          products={productList}
+          slots={slots}
+          pointerStates={pointerStates}
+        />
+      )}
     </section>
   );
 }

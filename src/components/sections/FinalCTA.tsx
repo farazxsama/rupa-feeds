@@ -3,7 +3,7 @@ import { site } from "@/config/site";
 export function FinalCTA() {
   const c = site.finalCta;
   return (
-    <section aria-labelledby="cta-title" className="bg-mist px-4 pb-24 sm:px-6 lg:px-8">
+    <section aria-labelledby="cta-title" className="bg-white px-4 pb-10 sm:px-6 lg:px-8">
       <div
         className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] px-6 py-16 text-center sm:px-12 sm:py-20"
         style={{ background: "radial-gradient(120% 140% at 50% 0%, #0504aa 0%, #030378 55%, #020250 100%)" }}

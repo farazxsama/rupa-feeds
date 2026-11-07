@@ -21,13 +21,13 @@ const wrap = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8";
 export function YouTubeVideos({ title = defaults.title, subtitle = defaults.subtitle, videos = defaults.items }: Props) {
   if (videos.length === 0) return null;
   return (
-    <section aria-labelledby="videos-title" className="bg-white pt-16 sm:pt-20">
+    <section aria-labelledby="videos-title" className="bg-white py-8 sm:py-10">
       <div className={wrap}>
         <div className="mx-auto max-w-2xl text-center">
           <h2 id="videos-title" className="font-display text-4xl font-medium text-ink sm:text-5xl">
             {title}
           </h2>
-          {subtitle && <p className="mt-4 text-ink/70">{subtitle}</p>}
+          {/* {subtitle && <p className="mt-4 text-black">{subtitle}</p>} */}
         </div>
         <span aria-hidden="true" className="mx-auto mt-5 block h-1 w-16 rounded-full" style={{ background: "linear-gradient(90deg, #2f2ee0, #5b5af0)" }} />
         <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

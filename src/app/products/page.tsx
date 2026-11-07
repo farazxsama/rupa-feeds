@@ -114,7 +114,7 @@ export default function ProductsPage() {
                         {p.name}
                       </a>
                     </h3>
-                    <p className="mt-3 flex-1 text-[15px] leading-relaxed text-ink/70">{p.intro}</p>
+                    <p className="mt-3 flex-1 text-[15px] leading-relaxed text-black">{p.intro}</p>
                     <dl className="mt-6 grid grid-cols-2 gap-2.5">
                       {p.specs.slice(0, 2).map((s) => (
                         <div key={s.label} className="rounded-xl bg-pond-100/60 px-3.5 py-2.5">
@@ -141,7 +141,7 @@ export default function ProductsPage() {
               <h2 id="about-range-title" className="mt-4 font-display text-3xl font-medium leading-tight text-ink sm:text-4xl lg:text-[2.75rem]">
                 Made for different fish, growth stages and ponds
               </h2>
-              <div className="mt-6 space-y-5 leading-relaxed text-ink/75">
+              <div className="mt-6 space-y-5 leading-relaxed text-black">
                 <p>{about.intro.paragraphs[1]}</p>
                 <p>{about.why.closing}</p>
               </div>

@@ -5,21 +5,53 @@ import type { Product } from "@/config/products";
 import { placeholderPackagingCanvas } from "@/lib/placeholderPackaging";
 import { ZoneIcon } from "./ProductInfo";
 
+export interface CardPointerState {
+  x: number;
+  y: number;
+  active: boolean;
+}
+
 /**
  * Product card. The `stageRef` div is where the shared product canvas draws
  * the 3D bag (drei <View>). If 3D is unavailable a flat image is shown.
+ * Cursor movement across the card is tracked in `pointerState` without React renders.
  */
-export const ProductCard = forwardRef<HTMLDivElement, { product: Product; show3D: boolean }>(function ProductCard(
-  { product, show3D },
-  stageRef
-) {
+export const ProductCard = forwardRef<
+  HTMLDivElement,
+  { product: Product; show3D: boolean; pointerState?: CardPointerState }
+>(function ProductCard({ product, show3D, pointerState }, stageRef) {
   const [img, setImg] = useState<string | null>(product.packagingTexture);
   useEffect(() => {
     if (!product.packagingTexture) setImg(placeholderPackagingCanvas(product).toDataURL("image/png"));
   }, [product]);
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-[0_30px_60px_-40px_rgba(14,26,23,0.45)]">
+    <article
+      onPointerMove={(e) => {
+        if (!pointerState || e.pointerType === "touch") return;
+        const rect = e.currentTarget.getBoundingClientRect();
+        if (rect.width > 0 && rect.height > 0) {
+          const nx = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+          const ny = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+          pointerState.x = Math.max(-1, Math.min(1, nx));
+          pointerState.y = Math.max(-1, Math.min(1, ny));
+          pointerState.active = true;
+        }
+      }}
+      onPointerLeave={(e) => {
+        if (!pointerState || e.pointerType === "touch") return;
+        pointerState.x = 0;
+        pointerState.y = 0;
+        pointerState.active = false;
+      }}
+      onPointerCancel={() => {
+        if (!pointerState) return;
+        pointerState.x = 0;
+        pointerState.y = 0;
+        pointerState.active = false;
+      }}
+      className="group flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-[0_30px_60px_-40px_rgba(14,26,23,0.45)]"
+    >
       <div
         ref={stageRef}
         className="relative aspect-[4/4.2] w-full overflow-hidden"
@@ -37,7 +69,7 @@ export const ProductCard = forwardRef<HTMLDivElement, { product: Product; show3D
           <p className="eyebrow text-pond-500">{product.zone}</p>
         </div>
         <h3 className="mt-4 font-display text-2xl font-medium text-ink">{product.name}</h3>
-        <p className="mt-2 flex-1 text-[15px] leading-relaxed text-ink/70">{product.cardDescription}</p>
+        <p className="mt-2 flex-1 text-[15px] leading-relaxed text-black">{product.cardDescription}</p>
         <a href={product.href} className="btn-dark mt-6 self-start">
           Explore Product <span aria-hidden="true">→</span>
         </a>

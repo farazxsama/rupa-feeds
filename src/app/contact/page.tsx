@@ -39,7 +39,7 @@ function InfoCard({ icon, title, children }: { icon: string; title: string; chil
       </span>
       <div className="min-w-0">
         <h3 className="font-display text-lg font-medium text-ink">{title}</h3>
-        <div className="mt-2 space-y-1 text-[15px] leading-relaxed text-ink/75">{children}</div>
+        <div className="mt-2 space-y-1 text-[15px] leading-relaxed text-black">{children}</div>
       </div>
     </div>
   );
@@ -124,7 +124,7 @@ export default function ContactPage() {
               <h2 id="contact-form-title" className="mt-3 font-display text-3xl font-medium text-ink sm:text-4xl">
                 {form.title}
               </h2>
-              <p className="mt-3 text-ink/70">{form.body}</p>
+              <p className="mt-3 text-black">{form.body}</p>
               <div className="mt-8">
                 <ContactForm />
               </div>
@@ -155,7 +155,7 @@ export default function ContactPage() {
                 <dl className="mt-4">
                   {hours.rows.map((r) => (
                     <div key={r.days} className="flex items-baseline justify-between gap-4 border-b border-ink/10 py-3 last:border-0 last:pb-0">
-                      <dt className="text-[15px] text-ink/70">{r.days}</dt>
+                      <dt className="text-[15px] text-black">{r.days}</dt>
                       <dd className="text-right text-[15px] font-semibold text-ink">{r.time}</dd>
                     </div>
                   ))}
@@ -175,7 +175,7 @@ export default function ContactPage() {
                   {map.title}
                 </h2>
               </div>
-              <address className="text-[15px] not-italic leading-relaxed text-ink/70 sm:text-right">
+              <address className="text-[15px] not-italic leading-relaxed text-black sm:text-right">
                 {address.lines.map((l) => (
                   <span key={l} className="block">
                     {l}
