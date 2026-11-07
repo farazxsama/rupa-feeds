@@ -11,8 +11,10 @@ export const metadata: Metadata = {
 
 /**
  * ABOUT US — a plain static page (no 3D, no scroll animation). All copy and
- * image paths live in config/about.ts.
+ * image paths live in config/about.ts. 
  */
+
+// this comment is just to check the commit
 
 /** Real image when a path is configured, otherwise a clearly-labelled placeholder block. */
 function Picture({ src, label, className = "" }: { src: string | null; label: string; className?: string }) {
