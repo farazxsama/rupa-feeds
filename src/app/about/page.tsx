@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { PreFooterSections } from "@/components/sections/PreFooterSections";
@@ -106,7 +107,37 @@ function SocialIcon({ name }: { name: string }) {
 const wrap = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8";
 
 export default function AboutPage() {
-  const { intro, why, purpose, journey, values, csr } = about;
+  const { intro, why, journey, values, csr } = about;
+
+  const quickLinks = [
+    {
+      title: "Our Products",
+      href: "/products",
+      eyebrow: "01",
+      body: "Explore our specialized range of floating, sinking, and polyculture feeds engineered for optimal fish nutrition, better FCR, and pond productivity.",
+      cta: "Explore our feeds",
+      icon: (
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5z" />
+          <path d="M2 17l10 5 10-5" />
+          <path d="M2 12l10 5 10-5" />
+        </svg>
+      ),
+    },
+    {
+      title: "Our Branches",
+      href: "/branches",
+      eyebrow: "02",
+      body: "Find our nearest branch and distribution network across key aquaculture regions for reliable feed supply, technical guidance, and farmer support.",
+      cta: "Find a branch near you",
+      icon: (
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" />
+          <circle cx="12" cy="9.5" r="2.5" />
+        </svg>
+      ),
+    },
+  ];
 
   return (
     <>
@@ -190,62 +221,66 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Mission + vision */}
+        {/* Products + Branches navigation cards */}
         <section
-          aria-label="Mission and vision"
+          aria-label="Products and branches"
           className="relative overflow-hidden bg-pond-950"
           style={{ background: "radial-gradient(90% 120% at 50% 0%, #030378 0%, #020250 60%)" }}
         >
-          {purpose.image && (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={purpose.image} alt="" className="absolute inset-0 h-full w-full object-cover opacity-35" />
-          )}
           {/* soft light pools behind the cards */}
           <div aria-hidden="true" className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-pond-500/20 blur-3xl" />
           <div aria-hidden="true" className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-pond-300/20 blur-3xl" />
           <div className={`${wrap} relative grid gap-6 py-20 sm:py-24 md:grid-cols-2`}>
-            {[purpose.mission, purpose.vision].map((m, i) => (
-              <article
-                key={m.title}
-                className="glass-panel group relative overflow-hidden p-8 transition duration-300 hover:-translate-y-1 hover:border-white/25 sm:p-10"
+            {quickLinks.map((item, i) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                className="glass-panel group relative flex flex-col justify-between overflow-hidden p-8 transition duration-300 hover:-translate-y-1.5 hover:border-white/30 hover:shadow-[0_24px_50px_-15px_rgba(0,0,0,0.8)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-pond-950 sm:p-10"
               >
-                <span
-                  aria-hidden="true"
-                  className="absolute inset-x-0 top-0 h-1"
-                  style={{ background: i === 0 ? "linear-gradient(90deg, #c9c8fb, #5b5af0)" : "linear-gradient(90deg, #a8a7f7, #2f2ee0)" }}
-                />
-                <span aria-hidden="true" className="pointer-events-none absolute -right-2 -top-6 select-none font-display text-[9rem] font-semibold leading-none text-white/[0.05]">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span
-                  aria-hidden="true"
-                  className="relative flex h-16 w-16 items-center justify-center rounded-2xl shadow-[0_16px_30px_-14px_rgba(0,0,0,0.7)]"
-                  style={{
-                    background: i === 0 ? "linear-gradient(140deg, #c9c8fb 0%, #5b5af0 100%)" : "linear-gradient(140deg, #a8a7f7 0%, #2f2ee0 100%)",
-                    color: "#020250",
-                  }}
-                >
-                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-                    {i === 0 ? (
-                      // mission: target hit by an arrow
-                      <>
-                        <circle cx="11" cy="13" r="7.5" />
-                        <circle cx="11" cy="13" r="3.5" />
-                        <path d="M11 13l8.500-8.500M16.500 4.500h3v3" />
-                      </>
-                    ) : (
-                      // vision: eye
-                      <>
-                        <path d="M2.500 12s3.500-6.500 9.500-6.500 9.500 6.500 9.500 6.500-3.500 6.500-9.500 6.500S2.500 12 2.500 12z" />
-                        <circle cx="12" cy="12" r="3" />
-                      </>
-                    )}
+                <div>
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-x-0 top-0 h-1"
+                    style={{ background: i === 0 ? "linear-gradient(90deg, #c9c8fb, #5b5af0)" : "linear-gradient(90deg, #a8a7f7, #2f2ee0)" }}
+                  />
+                  <span aria-hidden="true" className="pointer-events-none absolute -right-2 -top-6 select-none font-display text-[9rem] font-semibold leading-none text-white/[0.05] transition-transform duration-300 group-hover:scale-105">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="relative flex h-16 w-16 items-center justify-center rounded-2xl shadow-[0_16px_30px_-14px_rgba(0,0,0,0.7)] transition-transform duration-300 group-hover:scale-105"
+                    style={{
+                      background: i === 0 ? "linear-gradient(140deg, #c9c8fb 0%, #5b5af0 100%)" : "linear-gradient(140deg, #a8a7f7 0%, #2f2ee0 100%)",
+                      color: "#020250",
+                    }}
+                  >
+                    {item.icon}
+                  </span>
+                  <p className="eyebrow relative mt-7 text-pond-300">{item.eyebrow}</p>
+                  <h2 className="relative mt-3 font-display text-3xl font-medium text-white transition-colors group-hover:text-pond-100 sm:text-4xl">
+                    {item.title}
+                  </h2>
+                  <p className="relative mt-4 text-base leading-relaxed text-white/85 sm:text-lg">{item.body}</p>
+                </div>
+
+                <div className="relative mt-8 flex items-center gap-2 text-sm font-semibold tracking-wide text-pond-300 transition-colors group-hover:text-white">
+                  <span>{item.cta}</span>
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="transition-transform duration-300 group-hover:translate-x-1.5"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
-                </span>
-                <p className="eyebrow relative mt-7 text-pond-300">{String(i + 1).padStart(2, "0")}</p>
-                <h2 className="relative mt-3 font-display text-3xl font-medium sm:text-4xl">{m.title}</h2>
-                <p className="relative mt-4 text-base leading-relaxed text-white/85 sm:text-lg">{m.body}</p>
-              </article>
+                </div>
+              </Link>
             ))}
           </div>
         </section>

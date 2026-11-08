@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useStoryScroll } from "@/hooks/useStoryScroll";
 import { useExperienceMode } from "@/hooks/useExperienceMode";
 import { story } from "@/lib/storyStore";
-import { DepthGauge, DiveOverlay, StoryFallback } from "@/components/ui/StoryOverlays";
+import { DiveOverlay, StoryFallback } from "@/components/ui/StoryOverlays";
 import {
   HeroSection,
   FloatingFeedSection,
@@ -66,12 +66,7 @@ export function StoryExperience() {
           </div>
         )}
         {mode === "fallback" && <StoryFallback onEnable3D={webgl ? enable3D : undefined} />}
-        {mode === "3d" && (
-          <>
-            <DiveOverlay />
-            <DepthGauge />
-          </>
-        )}
+        {mode === "3d" && <DiveOverlay />}
         {/* cinematic vignette + bottom scrim for text legibility */}
         <div
           aria-hidden="true"

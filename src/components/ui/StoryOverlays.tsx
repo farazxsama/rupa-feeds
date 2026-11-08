@@ -43,44 +43,6 @@ export function DiveOverlay() {
   );
 }
 
-const ZONES = [
-  { label: "Surface", y: 0 },
-  { label: "Mid-water", y: -6 },
-  { label: "Bottom", y: -12.5 },
-];
-
-/** Depth meter: makes the vertical journey legible at a glance. */
-export function DepthGauge() {
-  const marker = useRef<HTMLDivElement>(null);
-  const wrap = useRef<HTMLDivElement>(null);
-  const readout = useRef<HTMLSpanElement>(null);
-  const toPct = (y: number) => Math.min(100, Math.max(0, ((3 - y) / 16) * 100));
-  useRaf(() => {
-    if (!marker.current || !wrap.current) return;
-    const y = story.cameraY;
-    marker.current.style.top = `${toPct(y)}%`;
-    const p = story.progress;
-    wrap.current.style.opacity = p > 0.04 && p < 0.985 ? "1" : "0";
-    if (readout.current) readout.current.textContent = y > 0.05 ? "Above water" : `${Math.abs(y).toFixed(1)} m`;
-  });
-  return (
-    <div ref={wrap} aria-hidden="true" className="pointer-events-none absolute right-8 top-1/2 hidden h-[46vh] -translate-y-1/2 opacity-0 transition-opacity duration-700 lg:block">
-      <div className="relative h-full w-px bg-white/25">
-        {ZONES.map((z) => (
-          <div key={z.label} className="absolute right-0 flex -translate-y-1/2 items-center gap-2" style={{ top: `${toPct(z.y)}%` }}>
-            <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/55">{z.label}</span>
-            <span className="h-px w-2 bg-white/40" />
-          </div>
-        ))}
-        <div ref={marker} className="absolute -left-[5px] -translate-y-1/2 transition-[top] duration-100">
-          <span className="block h-[11px] w-[11px] rounded-full border-2 border-pond-300 bg-pond-950" />
-          <span ref={readout} className="absolute right-6 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-full bg-pond-950/70 px-2 py-0.5 text-[11px] font-semibold text-pond-300 backdrop-blur" />
-        </div>
-      </div>
-    </div>
-  );
-}
-
 /**
  * No-WebGL / reduced-motion backdrop: the same three-zone story as a calm
  * illustrated cross-section that highlights the zone being read.
